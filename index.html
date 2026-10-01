@@ -1,0 +1,1245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta http-equiv="Cache-Control" content="no-store, max-age=0"/><meta http-equiv="Pragma" content="no-cache"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FixFlow — Report. Track. Resolve.</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234e67f4'/%3E%3Cpath d='M32 12 38 27 53 32 38 37 32 52 26 37 11 32 26 27Z' fill='white'/%3E%3Ctext%3E%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f8fc;color:#17213b;font:14px Arial,sans-serif}.app-shell{display:flex;min-height:100vh}.sidebar{width:238px;background:#fff;border-right:1px solid #e9edf5;padding:30px 18px;display:flex;flex-direction:column}.brand{display:flex;gap:10px;align-items:center;padding:0 10px 48px}.brand-mark{background:#4e67f4;color:#fff;padding:8px;border-radius:9px}.brand strong{font-size:22px}.brand span{display:block;font-size:8px;color:#9aa3b8}.workspace-label{font-size:10px;color:#aab1bf;padding:0 12px 10px}.team-label{margin-top:35px}.nav-item{display:flex;gap:14px;align-items:center;padding:13px;border-radius:9px;color:#727d94;cursor:pointer}.nav-item.active,.nav-item:hover{background:#f0f3ff;color:#4e67f4}.nav-count{margin-left:auto}.sidebar-bottom{margin-top:auto;border-top:1px solid #e9edf5;padding-top:18px;font-size:11px}.main{flex:1}.topbar{height:78px;background:#fff;border-bottom:1px solid #e9edf5;display:flex;align-items:center;justify-content:space-between;padding:0 42px}.top-actions{display:flex;align-items:center;gap:14px}.logout-btn{background:#fff0f1;color:#d94f5e;border:1px solid #ffdadd;border-radius:7px;padding:8px 11px;font-size:11px;font-weight:bold}.avatar{width:35px;height:35px;border-radius:50%;background:#e9ecff;color:#4e67f4;display:grid;place-items:center;font-weight:bold}.user-meta small,.user-meta strong{display:block}.user-meta small{color:#9aa2b3;font-size:11px}.content{padding:39px 42px}.page{display:none}.active-page{display:block}.page-intro{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}.eyebrow{font-size:10px;letter-spacing:1px;color:#9aa3b8;font-weight:bold;margin-bottom:9px}.page-intro h1{font-size:29px;margin:0 0 7px}.page-intro p{color:#7b849b}.primary{background:#4e67f4;color:#fff;border:0;border-radius:8px;padding:12px 17px;font-weight:bold}.outline-btn,.filter-btn{background:#fff;border:1px solid #e9edf5;border-radius:7px;padding:11px 14px}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}.stat-card,.panel{background:#fff;border:1px solid #e9edf5;border-radius:11px;box-shadow:0 7px 25px #1d2a4f0d}.stat-card{padding:18px 20px}.stat-top{display:flex;justify-content:space-between;color:#788298}.stat-card>strong{font-size:27px;display:block;margin:13px 0 6px}.positive{color:#1eb980}.negative{color:#eb6471}.dashboard-grid,.bottom-grid{display:grid;grid-template-columns:1fr;gap:17px;margin-bottom:18px}.panel{padding:22px}.panel-heading{display:flex;justify-content:space-between;margin-bottom:19px}.panel h2{font-size:15px;margin:0 0 5px}.panel-heading p{font-size:11px;color:#9ca5b6;margin:0}.activity{display:flex;align-items:center;padding:12px 0;border-bottom:1px solid #f0f2f6;gap:13px}.act-icon{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:#f1f3ff}.activity-main{flex:1}.activity-main strong{font-size:12px}.activity-main p{margin:4px 0;color:#939caf;font-size:11px}.activity-time{color:#aab1bf;font-size:10px}.pill{border-radius:20px;padding:4px 8px;font-size:9px;font-weight:bold}.green-pill{color:#15996a;background:#e7faf2}.amber-pill{color:#b87508;background:#fff3da}.red-pill{color:#d94f5e;background:#fff0f1}.health-map{height:220px;background:#f1f4ff;border-radius:8px;position:relative}.facility-node{position:absolute;background:#fff;border:1px solid #e7eaf4;border-radius:8px;padding:8px;box-shadow:0 4px 10px #cdd3e455}.facility-node strong,.facility-node small{display:block;font-size:10px}.facility-node small{color:#9aa3b6;margin-top:4px}.node-a{left:12%;top:16%}.node-b{right:10%;top:15%}.node-c{left:36%;bottom:12%}.node-d{right:15%;bottom:13%}.node-e{left:12%;top:58%}.node-f{right:10%;top:58%}.green-dot,.amber-dot,.red-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#1eb980}.amber-dot{background:#f0a62b}.red-dot{background:#eb6471}.health-legend{display:flex;justify-content:space-between;font-size:10px;color:#8993a7;margin-top:15px}.chart{height:150px}.chart svg{width:100%;height:100%}.table-panel{padding:0;overflow:hidden}.table-toolbar{display:flex;gap:9px;padding:18px;border-bottom:1px solid #e9edf5}.search{border:1px solid #e9edf5;border-radius:7px;padding:9px;flex:1}.search input{border:0;outline:0;width:80%}table{width:100%;border-collapse:collapse;min-width:800px}th,td{text-align:left;padding:16px 18px;border-bottom:1px solid #f0f2f6;font-size:11px}th{font-size:9px;color:#9ea6b8}.report-id{color:#4e67f4;font-weight:bold}.full-map{padding:0;display:grid;grid-template-columns:1fr 300px;overflow:hidden}.big-map{height:535px;position:relative;background:#f2f5ff;background-image:linear-gradient(#e1e6f5 1px,transparent 1px),linear-gradient(90deg,#e1e6f5 1px,transparent 1px);background-size:34px 34px}.big-building{position:absolute;width:145px;height:85px;background:#fff;border:2px solid #7edbb8;border-radius:10px;padding:18px 12px;box-shadow:0 8px 17px #bac4df55}.big-building span,.big-building small{display:block}.big-building small{margin-top:8px;color:#8490a7}.big-building.amber{border-color:#f3c56a}.bb-a{top:15%;left:18%}.bb-b{top:15%;right:17%}.bb-c{bottom:15%;left:30%;border-color:#ed8c95}.bb-d{bottom:12%;right:13%}.bb-e{top:43%;left:10%}.bb-f{top:43%;right:10%}.map-pin{position:absolute;background:#fff;border-radius:50%;padding:8px;box-shadow:0 4px 10px #bbc5df}.pin1{top:34%;left:45%}.pin2{bottom:32%;right:38%}.map-side{padding:25px}.side-facility{display:flex;gap:10px;padding:17px 0;border-bottom:1px solid #e9edf5}.analytics-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.big-stat{min-height:190px}.big-stat>strong{display:block;font-size:30px;margin:18px 0}.bar-row{display:grid;grid-template-columns:100px 1fr 25px;gap:12px;align-items:center;margin:17px 0;font-size:11px}.bar-row>div{height:8px;background:#f0f2f9}.bar-row i{display:block;height:100%;background:#4e67f4}.job-card{display:flex;gap:18px;padding:20px 0;border-top:1px solid #e9edf5}.job-priority{width:4px;background:#eb6471}.job-main{flex:1}.job-head{display:flex;gap:10px}.time-left{margin-left:auto;color:#eb6471;font-size:10px}.job-thumb{width:80px;height:80px;background:#fff0f1;border-radius:9px;display:grid;place-items:center;font-size:32px}.notification-panel{padding:0}.notification{display:flex;gap:15px;padding:20px;border-bottom:1px solid #e9edf5}.notif-icon{width:37px;height:37px;background:#fff0f1;border-radius:9px;display:grid;place-items:center}.modal-overlay{display:none;position:fixed;inset:0;background:#18213b66;z-index:10;align-items:center;justify-content:center;padding:20px}.modal-overlay.open{display:flex}.modal{width:490px;background:#fff;border-radius:14px;padding:30px;position:relative}.modal-close{position:absolute;right:19px;top:15px;background:transparent;font-size:23px}.modal label{display:block;font-size:11px;font-weight:bold;color:#66718a;margin:14px 0}.modal select,.modal textarea{display:block;width:100%;margin-top:7px;padding:11px;border:1px solid #e9edf5;border-radius:7px}.modal textarea{height:75px}.modal-row{display:flex;gap:12px}.modal-row label{flex:1}.submit-report,.quote-send{width:100%;margin-top:12px}.upload-box{margin-top:7px;border:1px dashed #cbd2e5;background:#fafbff;border-radius:8px;min-height:83px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:13px;position:relative;text-align:center}.upload-box input{position:absolute;inset:0;opacity:0;cursor:pointer}.upload-box strong{font-size:11px;color:#4e67f4}.upload-box small{width:100%;color:#a3abbb;font-size:9px}.preview-list{display:flex;gap:5px;width:100%;justify-content:center}.preview-list img{width:42px;height:34px;object-fit:cover}.sla-info-panel{display:flex;align-items:center;justify-content:space-between;gap:35px;margin-bottom:18px;padding:21px 24px}.sla-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;flex:1}.sla-steps>div{border-left:1px solid #e4e8f5;padding-left:14px}.sla-steps b,.sla-steps strong,.sla-steps span{display:block}.sla-steps b{color:#4e67f4;font-size:10px;margin-bottom:11px}.sla-steps span{color:#939caf;font-size:10px;margin-top:5px}.sla-panel{display:none}@media(max-width:1050px){.sidebar{width:205px}.content{padding:30px}.topbar{padding:0 30px}.stat-grid{grid-template-columns:repeat(2,1fr)}.dashboard-grid,.bottom-grid{grid-template-columns:1fr}.analytics-grid{grid-template-columns:1fr}}@media(max-width:700px){.sidebar{width:62px;padding:20px 8px}.brand{padding:0 5px 35px}.brand>div:last-child,.workspace-label,.nav-item{font-size:0}.nav-item{justify-content:center;padding:0}.nav-item span{font-size:18px}.nav-count,.sidebar-bottom{display:none}.topbar{padding:0 15px}.user-meta,.chevron{display:none}.content{padding:25px 15px}.page-intro{align-items:start;gap:15px}.stat-grid{gap:10px}.full-map{grid-template-columns:1fr}.map-side{display:none}.big-map{height:440px}.job-thumb{display:none}.modal{padding:25px 20px}.sla-info-panel{display:block}.sla-steps{grid-template-columns:repeat(2,1fr);margin-top:18px}}
+.login-screen{position:fixed;inset:0;z-index:30;display:flex;background:#fff}.login-card{width:52%;max-width:680px;padding:8vh 9vw 5vh;display:flex;flex-direction:column;justify-content:center}.login-brand{display:flex;align-items:center;gap:10px;margin-bottom:70px}.login-brand .brand-mark{width:34px;height:34px;text-align:center}.login-brand strong{font-size:23px}.login-brand span{display:block;font-size:8px;letter-spacing:1px;color:#a1a8b9}.login-copy h1{font-size:36px;margin:0 0 10px;letter-spacing:-1px}.login-copy p{color:#7b849b;margin:0 0 27px;line-height:1.5}.login-copy{max-width:380px}.login-screen form{max-width:380px}.login-screen label{display:block;font-size:11px;font-weight:bold;color:#66718a;margin:16px 0}.login-screen label>input,.password-wrap{display:flex;width:100%;margin-top:7px;border:1px solid #e3e7f0;border-radius:8px;background:#fff}.login-screen label>input{padding:13px;outline:0}.password-wrap input{flex:1;border:0;outline:0;padding:13px}.password-wrap button{background:transparent;color:#4e67f4;font-size:11px;font-weight:bold;padding-right:12px}.login-options{display:flex;justify-content:space-between;align-items:center;margin:17px 0 22px}.login-options label{margin:0;font-size:11px;font-weight:normal}.check{display:flex!important;align-items:center;gap:6px;color:#7b849b!important}.check input{accent-color:#4e67f4}.forgot{background:transparent;color:#4e67f4;font-size:11px;font-weight:bold}.login-btn{width:100%;display:flex;justify-content:space-between;padding:14px 16px}.login-divider{display:flex;align-items:center;gap:10px;color:#b0b7c4;font-size:11px;margin:20px 0}.login-divider:before,.login-divider:after{content:'';height:1px;background:#edf0f5;flex:1}.guest-btn{width:100%;background:#fff;border:1px solid #e3e7f0;padding:12px;border-radius:8px;color:#59657d;font-weight:bold}.login-footer{font-size:11px;color:#a0a8b8;margin-top:25px}.login-footer a{color:#4e67f4;text-decoration:none}.login-art{flex:1;background:#4e67f4;position:relative;overflow:hidden;color:#fff;display:flex;align-items:center;justify-content:center}.art-orb{position:absolute;border-radius:50%;border:1px solid #ffffff38}.orb-one{width:550px;height:550px;right:-150px;top:-100px}.orb-two{width:310px;height:310px;left:-145px;bottom:-100px;background:#ffffff0d}.art-content{position:relative;max-width:350px}.art-mark{width:48px;height:48px;border-radius:14px;background:#ffffff22;border:1px solid #ffffff55;display:grid;place-items:center;font-size:25px;margin-bottom:32px}.art-content h2{font-size:43px;line-height:1.08;letter-spacing:-1.5px;margin:0}.art-content h2 em{font-style:normal;color:#c9d1ff}.art-content p{font-size:14px;line-height:1.6;color:#dfe4ff;margin:22px 0 48px}.art-stat{border-top:1px solid #ffffff44;padding-top:17px;display:flex;gap:15px;align-items:center}.art-stat strong{font-size:28px}.art-stat span{font-size:11px;color:#dfe4ff;line-height:1.5}.login-screen.hidden{display:none}@media(max-width:750px){.login-art{display:none}.login-card{width:100%;max-width:none;padding:35px 25px}.login-brand{margin-bottom:55px}}
+
+
+/* responsive UI refinements */
+@media (max-width: 900px){.content{padding:28px 24px}.topbar{padding:0 24px}.stat-grid{grid-template-columns:repeat(2,1fr)}.dashboard-grid,.bottom-grid{grid-template-columns:1fr}.full-map{grid-template-columns:1fr}.map-side{display:none}.analytics-grid{grid-template-columns:1fr}.sla-steps{grid-template-columns:repeat(2,1fr);gap:16px}.login-card{padding-left:6vw;padding-right:6vw}}
+@media (max-width: 640px){body{font-size:13px}.sidebar{position:fixed;z-index:8;bottom:0;left:0;width:100%;height:64px;padding:6px 8px;border-right:0;border-top:1px solid #e9edf5;display:flex;flex-direction:row;justify-content:space-around}.brand,.workspace-label,.team-label,.sidebar-bottom{display:none}.sidebar nav{display:flex;width:100%;justify-content:space-around}.nav-item{height:50px;min-width:48px;display:flex;flex-direction:column;justify-content:center;gap:2px;padding:4px;font-size:9px!important;margin:0}.nav-item span{font-size:17px;width:auto}.main{padding-bottom:64px}.topbar{height:64px;padding:0 15px}.breadcrumb{font-size:12px}.top-actions{gap:8px}.logout-btn{font-size:0;padding:8px;width:30px}.logout-btn:before{content:'';display:block;width:15px;height:15px;background:currentColor;
+   -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 2h9a1 1 0 0 1 1 1v3.2h-2V4H6v16h6v-2.2h2V21a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm13.2 5.2L22 12l-4.8 4.8-1.5-1.5 2.3-2.3H10v-2h8l-2.3-2.3z'/%3E%3C/svg%3E") center/contain no-repeat;
+   mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 2h9a1 1 0 0 1 1 1v3.2h-2V4H6v16h6v-2.2h2V21a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm13.2 5.2L22 12l-4.8 4.8-1.5-1.5 2.3-2.3H10v-2h8l-2.3-2.3z'/%3E%3C/svg%3E") center/contain no-repeat}.content{padding:22px 14px}.page-intro{flex-direction:column;align-items:stretch;gap:15px;margin-bottom:20px}.page-intro h1{font-size:24px}.page-intro .primary,.page-intro .outline-btn{align-self:flex-start}.stat-grid{grid-template-columns:repeat(2,1fr);gap:10px}.stat-card{padding:14px}.stat-card>strong{font-size:23px}.stat-top{font-size:11px}.panel{padding:16px}.activity{gap:8px;align-items:flex-start}.activity-time{margin-left:auto}.activity .pill{display:none}.health-map{height:220px}.health-legend{gap:8px;flex-wrap:wrap}.table-toolbar{flex-wrap:wrap}.search{flex-basis:100%}.table-wrap{margin:0 -16px}.big-map{height:520px}.big-building{width:112px;height:73px;padding:13px 9px;font-size:10px}.bb-a{left:5%}.bb-b{right:5%}.bb-c{left:20%}.bb-d{right:5%}.bb-e{left:5%}.bb-f{right:5%}.modal{width:100%;max-height:92vh;overflow:auto;padding:24px 18px}.modal-row{display:block}.login-card{width:100%;padding:28px 22px}.login-brand{margin-bottom:38px}.login-copy h1{font-size:30px}.login-screen form{max-width:none}.login-art{display:none}.sla-info-panel{padding:17px}.sla-steps{grid-template-columns:1fr 1fr}.sla-steps>div{padding-left:9px}.job-head{flex-wrap:wrap}.time-left{width:100%;margin-left:0}.job-thumb{display:none}}
+
+/* ===== new login experience ===== */
+.fx-auth{position:fixed;inset:0;z-index:40;display:grid;place-items:center;padding:24px;overflow:auto;background:#070b1c;font-family:inherit}
+.fx-auth.hidden{display:none}
+.fx-bg{position:absolute;inset:0;overflow:hidden}
+.fx-grid{position:absolute;inset:0;background-image:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(circle at 50% 45%,#000 30%,transparent 78%)}
+.fx-blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.75;animation:fxfloat 16s ease-in-out infinite}
+.fx-blob.b1{width:430px;height:430px;background:#4e67f4;top:-120px;left:-90px}
+.fx-blob.b2{width:390px;height:390px;background:#7d3df5;bottom:-140px;right:-100px;animation-delay:-5s}
+.fx-blob.b3{width:300px;height:300px;background:#12c2a0;bottom:20%;left:32%;opacity:.35;animation-delay:-9s}
+@keyframes fxfloat{0%,100%{transform:translate(0,0)}50%{transform:translate(28px,-34px)}}
+.fx-card{position:relative;width:100%;max-width:430px;padding:38px 36px 30px;border-radius:26px;background:#ffffff0f;border:1px solid #ffffff26;backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);box-shadow:0 30px 80px #00000066;color:#fff;animation:fxrise .6s cubic-bezier(.2,.8,.3,1)}
+@keyframes fxrise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.fx-logo{display:flex;align-items:center;gap:9px;margin-bottom:26px}
+.fx-logo-mark{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,#4e67f4,#8b5cf6);display:grid;place-items:center;font-size:17px;box-shadow:0 8px 22px #4e67f47a}
+.fx-logo-text{font-size:19px;font-weight:700;letter-spacing:-.5px}
+.fx-title{font-size:30px;line-height:1.15;letter-spacing:-1px;margin:0 0 8px;font-weight:700}
+.fx-sub{margin:0 0 22px;font-size:13.5px;line-height:1.55;color:#ffffffa8}
+.fx-roles{display:flex;gap:8px;padding:5px;border-radius:14px;background:#ffffff12;border:1px solid #ffffff1f;margin-bottom:20px}
+.fx-role{flex:1;padding:9px;border:0;border-radius:10px;background:transparent;color:#ffffffb5;font-size:12.5px;font-weight:600;cursor:pointer;transition:.2s}
+.fx-role.active{background:#fff;color:#131a33;box-shadow:0 6px 16px #0006}
+.fx-field{position:relative;margin-bottom:14px}
+.fx-field input{width:100%;padding:19px 16px 9px 44px;border-radius:14px;border:1px solid #ffffff2b;background:#ffffff10;color:#fff;font-size:14px;outline:0;transition:.2s}
+.fx-field input:focus{border-color:#8ea0ff;background:#ffffff1a;box-shadow:0 0 0 4px #4e67f43d}
+.fx-field label{position:absolute;left:44px;top:15px;font-size:13px;color:#ffffff8c;pointer-events:none;transition:.16s}
+.fx-field input:focus+label,.fx-field input:not(:placeholder-shown)+label{top:6px;font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:#a9b6ff}
+.fx-ico{position:absolute;left:15px;top:14px;font-size:15px;opacity:.85;z-index:1}
+.fx-submit{width:100%;margin-top:6px;padding:15px;border:0;border-radius:14px;background:linear-gradient(135deg,#4e67f4,#8b5cf6);color:#fff;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 14px 30px #4e67f455;transition:.2s}
+.fx-submit:hover{transform:translateY(-1px);box-shadow:0 18px 38px #4e67f46b}
+.fx-submit span{transition:.2s}.fx-submit:hover span{transform:translateX(4px)}
+.fx-ghost{width:100%;margin-top:10px;padding:13px;border-radius:14px;border:1px solid #ffffff26;background:transparent;color:#ffffffcc;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
+.fx-ghost:hover{background:#ffffff14}
+.fx-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0 16px;padding-top:18px;border-top:1px solid #ffffff1f;text-align:center}
+.fx-strip b{display:block;font-size:17px;font-weight:700}
+.fx-strip i{font-style:normal;font-size:10px;letter-spacing:.3px;color:#ffffff85}
+.fx-foot{margin:0;text-align:center;font-size:11.5px;color:#ffffff7d}
+.fx-foot a{color:#a9b6ff;text-decoration:none}
+@media(max-width:520px){.fx-auth{padding:14px}.fx-card{padding:28px 22px 24px;border-radius:22px}.fx-title{font-size:25px}}
+
+.preview-list{flex-wrap:wrap;gap:8px;margin-top:6px}
+.thumb{position:relative;margin:0;width:62px}
+.thumb img{width:62px;height:48px;border-radius:8px;object-fit:cover;border:1px solid #e3e7f0;display:block}
+.thumb figcaption{font-size:8.5px;color:#8d95a8;text-align:center;margin-top:3px;overflow:hidden;white-space:nowrap}
+.thumb-del{position:absolute;top:-6px;right:-6px;width:19px;height:19px;border-radius:50%;border:1.5px solid #fff;background:#e9455b;color:#fff;font-size:12px;line-height:1;cursor:pointer;box-shadow:0 2px 6px #0003;z-index:2;padding:0}
+.thumb-del:hover{background:#c22f43;transform:scale(1.08)}
+.clear-photos{align-self:center;background:#fff0f1;border:1px solid #ffdadd;color:#d94f5e;border-radius:7px;padding:6px 10px;font-size:10px;font-weight:700;cursor:pointer;z-index:2;position:relative}
+.row-del{background:#fff0f1;border:1px solid #ffdadd;color:#d94f5e;border-radius:7px;padding:5px 8px;font-size:12px;cursor:pointer}.row-del:hover{background:#ffe2e5}
+.mgmt-badge{display:inline-flex;align-items:center;gap:4px;background:#eaf7f0;color:#18885f;border:1px solid #cdeedd;border-radius:7px;padding:6px 9px;font-size:10px;font-weight:700;white-space:nowrap}@media(max-width:640px){.mgmt-badge{font-size:0;padding:6px}.mgmt-badge:before{content:"\2022";font-size:12px}}
+
+.job-list{display:flex;flex-direction:column;gap:12px}
+.job-card.in-progress{border-color:#ffe2b8;background:#fffdf7}
+.job-card.done-job{border-color:#d7eee2;background:#f8fdfa}
+.job-priority.working{background:#f0a62b}
+.job-priority.done{background:#18885f}
+.job-bar{height:6px;border-radius:99px;background:#f0e3cd;overflow:hidden;margin:12px 0 8px}
+.job-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#f0a62b,#e9455b);transition:width 1s linear}
+.job-meta{font-size:10.5px;color:#9aa1b2;letter-spacing:.2px}
+.time-left{font-variant-numeric:tabular-nums}
+.done-time{color:#18885f!important}
+.green-thumb{background:#eaf7f0!important;color:#18885f}
+
+.job-card.new-job{border-color:#d8e0ff;background:#f9fbff}
+.job-priority.new{background:#4e67f4}
+.pill.blue-pill{background:#eaeeff;color:#3b51cc}
+.ff-decline{margin-left:8px}
+.empty-row{text-align:center;color:#98a0b2;font-size:12px;padding:26px 10px}
+
+
+
+
+.side-facility{align-items:flex-start}
+.side-facility>div{flex:1}
+.health-bar{height:5px;border-radius:99px;background:#eef1f7;overflow:hidden;margin-top:7px}
+.health-bar i{display:block;height:100%;border-radius:99px;transition:width .6s ease}
+.health-bar i.green{background:#1eb980}.health-bar i.amber{background:#f0a62b}.health-bar i.red{background:#eb6471}
+.big-building.green{border-color:#7edbb8}.big-building.amber{border-color:#f3c56a}.big-building.red{border-color:#ed8c95}
+
+.target-card strong i{font-style:normal;color:#131a33}
+.target-bar{height:9px;border-radius:99px;background:#eef1f7;overflow:hidden;margin:6px 0 12px}
+.target-bar i{display:block;height:100%;border-radius:99px;transition:width .6s ease}
+.target-bar i.green{background:#1eb980}.target-bar i.amber{background:#f0a62b}.target-bar i.red{background:#eb6471}
+.target-foot{font-size:10.5px;color:#9aa3b8}
+.neutral{color:#8d95a8}
+.donut{width:104px;height:104px;border-radius:50%;background:conic-gradient(#1eb980 0deg,#eef1f7 0deg);display:grid;place-items:center;margin-top:14px}
+.donut span{width:74px;height:74px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:15px;font-weight:bold}
+.alert-badge{background:#eef1ff;color:#4e67f4;border-radius:20px;padding:5px 10px;font-size:9px;font-weight:bold;align-self:flex-start}
+.alert-badge.hot{background:#fff0f1;color:#d94f5e}
+.alert-content{display:flex;gap:14px;align-items:flex-start}
+.alert-icon{width:38px;height:38px;border-radius:10px;background:#eaf7f0;color:#18885f;display:grid;place-items:center;font-weight:bold;flex:none}
+.alert-badge.hot~*{}
+.bar-row i{transition:width .6s ease}
+
+.proof-box{display:block;margin:12px 0 4px;border-radius:10px;padding:13px;text-align:center;position:relative}
+.proof-box.empty{border:1px dashed #cbd2e5;background:#fafbff;cursor:pointer}
+.proof-box.empty input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.proof-box.empty .proof-ico{font-size:19px;display:block;margin-bottom:5px}
+.proof-box.empty strong{display:block;font-size:11.5px;color:#4e67f4}
+.proof-box.empty small{display:block;font-size:9.5px;color:#a3abbb;margin-top:3px}
+.proof-box.done{border:1px solid #d7eee2;background:#f5fcf8;text-align:left}
+.proof-head{font-size:10.5px;font-weight:bold;color:#18885f;margin-bottom:9px}
+.proof-strip{display:flex;gap:8px;flex-wrap:wrap}
+.proof-strip img{width:74px;height:58px;object-fit:cover;border-radius:8px;border:1px solid #d7eee2;cursor:zoom-in;transition:.18s}
+.proof-strip img:hover{transform:scale(1.04)}
+.link-btn{background:transparent;border:0;color:#8d95a8;font-size:10px;text-decoration:underline;cursor:pointer;padding:8px 0 0}
+.proof-btn{margin-top:8px;background:#eaf7f0;border:1px solid #cdeedd;color:#18885f;border-radius:7px;padding:6px 10px;font-size:10.5px;font-weight:bold;cursor:pointer}
+.proof-btn:hover{background:#dff2e8}
+.proof-viewer{position:fixed;inset:0;z-index:70;background:#0d1226d9;display:grid;place-items:center;padding:20px;animation:fadeIn .2s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.pv-card{background:#fff;border-radius:16px;padding:22px;max-width:520px;width:100%;max-height:88vh;overflow:auto;position:relative}
+.pv-close{position:absolute;right:14px;top:10px;background:transparent;border:0;font-size:22px;color:#98a0b2;cursor:pointer}
+.pv-head strong{display:block;margin:9px 0 2px;font-size:14px}
+.pv-head small{color:#8d95a8;font-size:11px}
+.pv-imgs{display:grid;gap:10px;margin:16px 0 10px}
+.pv-imgs img{width:100%;border-radius:11px;border:1px solid #e9edf5}
+.pv-foot{margin:0;font-size:10.5px;color:#9aa3b8;text-align:center}
+.modal-overlay{overflow-y:auto;align-items:flex-start}.modal-overlay.open{align-items:flex-start}.modal{max-height:calc(100vh - 40px);overflow-y:auto;margin:20px auto}
+
+.modal{display:flex;flex-direction:column;max-height:calc(100vh - 32px);overflow:hidden;margin:16px auto}
+.modal-scroll{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;flex:1;min-height:80px;padding-right:8px;margin-right:-4px}
+.modal-scroll::-webkit-scrollbar{width:9px}
+.modal-scroll::-webkit-scrollbar-track{background:#f2f4fa;border-radius:9px}
+.modal-scroll::-webkit-scrollbar-thumb{background:#c3cade;border-radius:9px;border:2px solid #f2f4fa}
+.modal-scroll::-webkit-scrollbar-thumb:hover{background:#a7b0c9}
+.modal-scroll{scrollbar-width:thin;scrollbar-color:#c3cade #f2f4fa}
+.submit-report,.quote-send{flex:none;position:sticky;bottom:0}
+.scroll-hint{font-size:10px;color:#a3abbb;text-align:center;padding:6px 0 0}
+
+.proof-box.empty{cursor:pointer;transition:.18s}
+.proof-box.empty:hover{background:#f1f4ff;border-color:#4e67f4}
+.pthumb{position:relative;margin:0;width:74px}
+.pthumb img{width:74px;height:58px;object-fit:cover;border-radius:8px;border:1px solid #d7eee2;cursor:zoom-in;display:block}
+.pthumb-del{position:absolute;top:-6px;right:-6px;width:19px;height:19px;border-radius:50%;border:1.5px solid #fff;background:#e9455b;color:#fff;font-size:12px;line-height:1;cursor:pointer;padding:0;box-shadow:0 2px 6px #0003;z-index:2}
+.pthumb-del:hover{background:#c22f43;transform:scale(1.08)}
+.proof-acts{display:flex;gap:8px;margin-top:11px;flex-wrap:wrap}
+.mini-btn{background:#fff;border:1px solid #cdeedd;color:#18885f;border-radius:7px;padding:6px 10px;font-size:10.5px;font-weight:bold;cursor:pointer}
+.mini-btn:hover{background:#eaf7f0}
+.mini-btn.danger{border-color:#ffdadd;color:#d94f5e;background:#fff}
+.mini-btn.danger:hover{background:#fff0f1}
+
+.speed-wrap{margin-left:auto;margin-right:16px}
+.speed-switch{display:flex;align-items:center;gap:10px;cursor:pointer;background:#fff;border:1px solid #e9edf5;border-radius:11px;padding:9px 13px}
+.speed-switch input{display:none}
+.speed-switch .track{width:38px;height:21px;border-radius:99px;background:#dfe3ee;position:relative;flex:none;transition:.22s}
+.speed-switch .knob{position:absolute;top:2.5px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 2px 5px #0002;transition:.22s}
+.speed-switch.on .track{background:#4e67f4}
+.speed-switch.on .knob{left:19px}
+.speed-text strong{display:block;font-size:11.5px}
+.speed-text small{display:block;font-size:9.5px;color:#9aa3b8;margin-top:1px}
+@media(max-width:700px){.speed-wrap{margin:12px 0 0;width:100%}.speed-switch{width:100%}}
+
+.pv-acts{display:flex;gap:10px;margin-top:14px}
+.pv-yes,.pv-no{flex:1;border-radius:10px;padding:13px;font-size:12.5px;font-weight:bold;cursor:pointer;border:1px solid transparent}
+.pv-yes{background:#18885f;color:#fff}
+.pv-yes:hover{background:#15754f}
+.pv-no{background:#fff;border-color:#ffdadd;color:#d94f5e}
+.pv-no:hover{background:#fff0f1}
+.pv-foot.ok{color:#18885f;font-weight:bold}
+.wipe-btn{display:block;width:100%;margin-bottom:12px;background:#fff;border:1px solid #e9edf5;color:#98a0b2;border-radius:7px;padding:8px;font-size:10px;font-weight:bold;cursor:pointer}.wipe-btn:hover{background:#f7f8fc;color:#d94f5e}
+
+.admin-id{display:flex;gap:11px;align-items:center}
+.avatar.admin{background:#efeaff;color:#6d49e0}
+.admin-kpi{grid-template-columns:repeat(6,1fr)}
+.admin-panel{margin-bottom:18px}
+.rank-row{display:grid;grid-template-columns:62px 54px 1fr 44px 56px;gap:9px;align-items:center;padding:11px 0;border-bottom:1px solid #f3f5f9;font-size:11px}
+.rank-row b{font-size:11.5px}
+.rank-row span{color:#9aa3b8;font-size:10px}
+.rank-row em{font-style:normal;font-weight:bold;text-align:right}
+.rank-row small{color:#9aa3b8;font-size:9.5px;text-align:right}
+.ctrl-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #f3f5f9}
+.ctrl-row strong{font-size:11.5px;color:#4e67f4;display:block}
+.ctrl-row small{display:block;font-size:10px;color:#9aa3b8;margin:2px 0}
+.ctrl-state{font-size:10px;font-weight:bold;color:#66718a}
+.audit{max-height:330px;overflow:auto}
+.audit-row{display:flex;gap:13px;align-items:flex-start;padding:11px 0;border-bottom:1px solid #f3f5f9;font-size:11px}
+.audit-row time{color:#9aa3b8;font-size:10px;white-space:nowrap;width:104px;flex:none}
+.audit-row strong{font-size:11.5px;display:block}
+.audit-row p{margin:2px 0 0;color:#8d95a8;font-size:10.5px}
+.audit-who{margin-left:auto;font-size:9.5px;color:#6d49e0;background:#efeaff;border-radius:20px;padding:4px 9px;white-space:nowrap}
+.outline-btn.small{padding:7px 11px;font-size:10.5px}
+@media(max-width:1050px){.admin-kpi{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.rank-row{grid-template-columns:54px 1fr 42px}.rank-row span,.rank-row small{display:none}.audit-row time{width:72px}}
+
+/* ---- administration layout ---- */
+#admin .page-intro{align-items:flex-start}
+#admin .admin-id{background:#fff;border:1px solid #e9edf5;border-radius:11px;padding:10px 14px}
+.admin-kpi{grid-template-columns:repeat(3,1fr);gap:14px}
+.admin-kpi .stat-card{display:flex;flex-direction:column;justify-content:space-between;min-height:116px}
+.admin-kpi .stat-card>strong{font-size:25px;margin:10px 0 4px}
+.admin-kpi .stat-top{font-size:11.5px;align-items:center}
+.admin-kpi small{font-size:10px}
+.admin-panel{margin-bottom:16px}
+.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.admin-grid .panel{min-height:230px}
+.audit{max-height:280px;overflow:auto;padding-right:6px}
+.audit-row{display:grid;grid-template-columns:118px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #f3f5f9}
+.audit-row:last-child{border-bottom:0}
+.audit-row time{color:#9aa3b8;font-size:10px;white-space:nowrap}
+.rank-row{display:grid;grid-template-columns:70px 56px 1fr 46px 60px;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #f3f5f9}
+.rank-row:last-child{border-bottom:0}
+.ctrl-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+@media(max-width:1200px){.admin-kpi{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:980px){.admin-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.admin-kpi{grid-template-columns:repeat(2,1fr);gap:10px}#admin .page-intro{flex-direction:column}#admin .admin-id{width:100%}.audit-row{grid-template-columns:1fr;gap:3px}.audit-row time{order:-1}.audit-who{justify-self:start}}
+
+@media(max-width:640px){
+ .sidebar{height:60px;padding:4px 2px}
+ .sidebar nav{display:contents}
+ .sidebar{display:flex;flex-direction:row;justify-content:space-around;align-items:center}
+ .nav-item{flex:1;max-width:76px;height:52px;gap:3px;font-size:8.5px!important;line-height:1.1;text-align:center;padding:3px 1px}
+ .nav-item span{font-size:16px}
+ .nav-count{position:absolute;transform:translate(16px,-16px);font-size:8px;padding:1px 5px}
+ .nav-item{position:relative}
+ .main{padding-bottom:60px}
+ #admin .stat-grid.admin-kpi{grid-template-columns:repeat(2,1fr)}
+ #admin .panel{padding:15px}
+ .watch-acts{width:100%;margin-top:9px}
+ .watch-acts .mini-btn{flex:1}
+ .ctrl-row{grid-template-columns:1fr auto;gap:8px}
+ .audit{max-height:none}
+}
+
+.quote-head{display:grid;grid-template-columns:1fr 58px 86px 28px;gap:8px;font-size:9.5px;font-weight:bold;color:#9aa3b8;margin:14px 0 6px;letter-spacing:.4px;text-transform:uppercase}
+.quote-row{display:grid;grid-template-columns:1fr 58px 86px 28px;gap:8px;margin-bottom:8px}
+.quote-row input{width:100%;padding:10px;border:1px solid #e9edf5;border-radius:7px;font:inherit;font-size:12px;outline:0}
+.quote-row input:focus{border-color:#4e67f4;box-shadow:0 0 0 3px #4e67f41f}
+.q-del{background:#fff0f1;border:1px solid #ffdadd;color:#d94f5e;border-radius:7px;cursor:pointer;font-size:14px;padding:0}
+.quote-total{display:flex;justify-content:space-between;align-items:center;margin:16px 0 4px;padding:13px 15px;background:#f4f6fb;border-radius:10px}
+.quote-total span{font-size:11px;color:#66718a;font-weight:bold}
+.quote-total strong{font-size:19px}
+.quote-box{border:1px solid #e9edf5;border-radius:10px;padding:13px;margin:11px 0;background:#fafbff}
+.quote-box.approved{border-color:#d7eee2;background:#f5fcf8}
+.quote-box.pending{border-color:#ffe2b8;background:#fffdf7}
+.quote-box.rejected{border-color:#ffdadd;background:#fff9f9}
+.qb-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.qb-head strong{font-size:16px}
+.qi{display:grid;grid-template-columns:1fr 42px 76px 84px;gap:8px;font-size:11px;padding:6px 0;border-bottom:1px solid #eef1f7;align-items:center}
+.qi:last-child{border-bottom:0}
+.qi b,.qi em{font-style:normal;color:#8d95a8;font-size:10.5px;text-align:right}
+.qi strong{text-align:right;font-size:11.5px}
+.qb-note{margin:10px 0 0;font-size:10.5px;color:#7b849b;font-style:italic}
+.qb-note.bad{color:#d94f5e;font-style:normal;font-weight:bold}
+.qa-row{padding:14px 0;border-top:1px solid #f0f2f6}
+.qa-row:first-child{border-top:0}
+.qa-main strong{font-size:13px;display:block;margin-top:5px}
+.qa-main p{margin:3px 0 0;font-size:11px;color:#8d95a8}
+.gate-note{font-size:10.5px;color:#b87508;background:#fff3da;border-radius:8px;padding:9px 11px;margin:10px 0 0}
+@media(max-width:640px){.quote-head,.quote-row{grid-template-columns:1fr 46px 70px 26px;gap:5px}.qi{grid-template-columns:1fr 34px 64px 72px}}
+.cost-final{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px;padding:10px 12px;border:1px solid var(--line,#e5e7eb);border-radius:10px;background:#f8fafc;font-size:13px}
+.cost-final strong{font-size:15px}
+
+
+.nav-item .nav-count{margin-left:auto;min-width:20px;padding:1px 7px;border-radius:99px;font-size:10.5px;font-weight:700;line-height:17px;text-align:center;background:#e8edf9;color:#4357a6}
+.nav-item.active .nav-count{background:#ffffff2e;color:#fff}
+.nav-item .nav-count.coral{background:#ffe2e2;color:#c0392b}
+.nav-item.active .nav-count.coral{background:#ffffff33;color:#fff}
+
+.ic{width:1em;height:1em;display:inline-block;vertical-align:-.14em;fill:currentColor;flex:none;
+    user-select:none;-webkit-user-select:none;pointer-events:none}
+.nav-item>span .ic,.icon-btn .ic{width:1.05em;height:1.05em}
+.stat-icon .ic{width:15px;height:15px}
+.avatar .ic,.brand-mark .ic,.fx-logo-mark .ic{width:.62em;height:.62em;vertical-align:-.08em}
+.job-thumb .ic{width:26px;height:26px}
+button .ic,.mini-btn .ic,.text-btn .ic,.proof-btn .ic{margin-right:5px;vertical-align:-.13em}
+.text-btn .ic,.fx-submit .ic{margin:0 0 0 5px}
+.notif-icon .ic{width:18px;height:18px;color:#eb6471}
+.alert-icon .ic{width:19px;height:19px}
+.proof-ico .ic{width:19px;height:19px}
+.upload-icon .ic{width:17px;height:17px;color:#4e67f4}
+.fx-ico .ic{width:15px;height:15px}
+.mgmt-badge .ic{width:12px;height:12px;margin-right:4px}
+.pill .ic,.alert-badge .ic{width:12px;height:12px}
+.audit-row .ic,.qa-row .ic{width:13px;height:13px}
+.job-thumb{font-size:0}
+.job-thumb .ic{color:#eb6471}
+.job-thumb.green-thumb .ic{color:#18885f}
+.search .ic{width:15px;height:15px;opacity:.55;margin-right:2px}
+
+/* ===== interface chrome behaves like an app, not a document =====
+   Nothing in the navigation, buttons, labels or headings can be highlighted;
+   real content a user might legitimately want to copy stays selectable. */
+body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+     -webkit-tap-highlight-color:transparent}
+.nav-item,.nav-item *,.brand,.brand *,.sidebar,.sidebar *,
+button,button *,label,.pill,.alert-badge,.nav-count,.stat-card span,.stat-card small,
+.panel-heading,.panel-heading *,.eyebrow,h1,h2,h3,.avatar,.tech-profile,.admin-id,
+.speed-switch,.speed-switch *,.job-head,.job-actions,.proof-acts,.table-toolbar,
+th,.mgmt-badge,.topbar,.topbar *,.map-block,.map-block *,.sla-steps,.sla-steps *{
+  -webkit-user-select:none;-moz-user-select:none;user-select:none}
+.nav-item,.brand-mark,.avatar,.map-block,.icon-btn,button{-webkit-user-drag:none}
+img,svg{-webkit-user-drag:none;user-drag:none}
+
+/* content worth copying stays selectable */
+input,textarea,select,
+td,.report-id,.job-card p,.job-card h3,.notification p,.notification strong,
+.audit-row p,.audit-row time,.qb-note,.qi,.qi *,.modal p,.modal-sub,.page-intro p,
+#auditLog,#auditLog *,.quote-box,.quote-box *{
+  -webkit-user-select:text;-moz-user-select:text;user-select:text}
+.greet-wave{font-size:1em;line-height:1;-webkit-user-select:none;user-select:none}
+
+/* ======================================================================
+   PHONE POLISH · final pass (declared last so it wins)
+   Goal: more breathing room, bigger tap targets, nothing cramped.
+   ====================================================================== */
+@media(max-width:640px){
+  /* --- page rhythm --- */
+  .content{padding:18px 15px calc(78px + env(safe-area-inset-bottom))}
+  .topbar{height:60px;padding:0 15px}
+  .page-intro{flex-direction:column;align-items:stretch;gap:12px;margin-bottom:18px}
+  .page-intro h1{font-size:21px;line-height:1.25;margin:2px 0}
+  .page-intro p{font-size:12.5px;line-height:1.5}
+  .eyebrow{font-size:9.5px;letter-spacing:.14em}
+
+  /* --- cards --- */
+  .stat-grid{grid-template-columns:repeat(2,1fr);gap:11px;margin-bottom:16px}
+  .stat-card{min-height:0;padding:14px 14px 13px;border-radius:14px}
+  .stat-card span{font-size:10.5px;line-height:1.3}
+  .stat-card strong{font-size:23px;line-height:1.1;margin:7px 0 3px}
+  .stat-card small{font-size:9.5px;line-height:1.35}
+  .stat-icon{width:26px;height:26px}
+
+  /* --- panels --- */
+  .panel{padding:16px;border-radius:14px;min-height:0}
+  .dashboard-grid,.bottom-grid,.analytics-grid,.admin-grid,.full-map{gap:14px}
+  .panel-heading{flex-direction:column;align-items:flex-start;gap:9px;margin-bottom:12px}
+  .panel-heading h2{font-size:15px}
+  .panel-heading p{font-size:11px}
+  .panel-heading .outline-btn,.panel-heading .alert-badge{align-self:stretch;text-align:center}
+
+  /* --- touch targets --- */
+  button,.primary,.outline-btn{min-height:42px;font-size:13px}
+  .mini-btn{min-height:36px;padding:8px 12px;font-size:11.5px}
+  .text-btn{min-height:36px}
+  .nav-item,.icon-btn{min-height:44px}
+
+  /* --- reports table: scrolls instead of squashing --- */
+  .table-panel{padding:0}
+  .table-toolbar{padding:14px}
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .table-wrap table{min-width:580px}
+  .table-wrap th,.table-wrap td{padding:12px 14px;font-size:11.5px;white-space:nowrap}
+
+  /* --- jobs --- */
+  .job-card{gap:12px;padding:16px 0}
+  .job-head{flex-wrap:wrap;gap:6px}
+  .job-card h3{font-size:14.5px;margin:7px 0 3px}
+  .job-card p{font-size:12px}
+  .job-actions{flex-direction:column;gap:8px;margin-top:11px}
+  .job-actions button{width:100%}
+  .proof-acts{flex-wrap:wrap;gap:8px}
+  .proof-acts .mini-btn{flex:1 1 46%}
+  .gate-note{font-size:11.5px;line-height:1.5}
+
+  /* --- costing --- */
+  .quote-box{padding:12px}
+  .qi{font-size:11px}
+  .cost-final{flex-direction:column;align-items:flex-start;gap:4px}
+
+  /* --- admin --- */
+  #admin .admin-kpi{gap:10px}
+  .ctrl-row{grid-template-columns:1fr;gap:9px;padding:13px 0}
+  .ctrl-acts .mini-btn{width:100%}
+  .audit-row{padding:12px 0}
+
+  /* --- modal becomes a bottom sheet --- */
+  .modal-overlay{align-items:flex-end;padding:0}
+  .modal{width:100%;margin:0;border-radius:20px 20px 0 0;padding:22px 17px calc(16px + env(safe-area-inset-bottom));
+         max-height:92vh}
+  .modal h2{font-size:19px}
+  .modal-close{top:13px;right:14px;width:34px;height:34px}
+  .modal-scroll{padding-right:2px}
+
+  /* --- bottom navigation bar --- */
+  .sidebar{height:calc(58px + env(safe-area-inset-bottom));padding:0 2px env(safe-area-inset-bottom);
+           border-top:1px solid #e9edf5;box-shadow:0 -4px 18px #1d2a4f0f}
+  .nav-item{max-width:none;height:56px;gap:3px;font-size:9px!important;letter-spacing:.01em;padding:7px 2px 6px}
+  .nav-item>span{font-size:17px;display:grid;place-items:center}
+  .nav-item>span .ic{width:19px;height:19px}
+  .nav-count{transform:translate(15px,-15px);font-size:8.5px;padding:0 5px;line-height:15px;min-width:16px}
+  .main{padding-bottom:0}
+}
+
+@media(max-width:380px){
+  .content{padding:15px 12px calc(76px + env(safe-area-inset-bottom))}
+  .stat-grid{gap:9px}
+  .stat-card strong{font-size:21px}
+  .nav-item{font-size:0!important;gap:0}
+  .nav-item>span .ic{width:21px;height:21px}
+}
+</style>
+</head>
+<body>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-home" viewBox="0 0 24 24"><path d="M12 2.6 1.8 11.1l1.3 1.5L5 11.3V21a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9.7l1.9 1.3 1.3-1.5z"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M3 4.8h18v3.2H3zm0 5.6h18v3.2H3zm0 5.6h18v3.2H3z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 20h18v2H3zm1-9h4v8H4zm6-6h4v14h-4zm6 4h4v10h-4z"/></symbol><symbol id="i-tools" viewBox="0 0 24 24"><path d="M21.3 4.1a5.9 5.9 0 0 1-7.6 7.3l-8.2 8.2a2 2 0 0 1-2.8-2.8l8.2-8.2a5.9 5.9 0 0 1 7.3-7.6l-3.3 3.3 2.9 2.9z"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 1.8 3.5 5v6.3c0 5.2 3.6 9.9 8.5 11.5 4.9-1.6 8.5-6.3 8.5-11.5V5z"/></symbol><symbol id="i-bell" viewBox="0 0 24 24"><path d="M12 2a6.2 6.2 0 0 0-6.2 6.2v3.4L3.4 16v1.4h17.2V16l-2.4-4.4V8.2A6.2 6.2 0 0 0 12 2zm0 20a3 3 0 0 0 2.9-2.2H9.1A3 3 0 0 0 12 22z"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><path d="M12 12.4a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.9 0-8.9 2.6-8.9 5.8V22h17.8v-1.8c0-3.2-4-5.8-8.9-5.8z"/></symbol><symbol id="i-door" viewBox="0 0 24 24"><path d="M4 2h9a1 1 0 0 1 1 1v3.2h-2V4H6v16h6v-2.2h2V21a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm13.2 5.2L22 12l-4.8 4.8-1.5-1.5 2.3-2.3H10v-2h8l-2.3-2.3z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><path d="M10.4 2a8.4 8.4 0 1 0 5 15.2l4.7 4.7 1.9-1.9-4.7-4.7A8.4 8.4 0 0 0 10.4 2zm0 2.6a5.8 5.8 0 1 1 0 11.6 5.8 5.8 0 0 1 0-11.6z"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M10.8 2.4h2.4v8.9l3.1-3.1 1.7 1.7-6 6-6-6 1.7-1.7 3.1 3.1zM3.6 18.4h16.8v3.2H3.6z"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M10.6 3.4h2.8v7.2h7.2v2.8h-7.2v7.2h-2.8v-7.2H3.4v-2.8h7.2z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M9.3 18.1 3 11.8l2-2 4.3 4.3L19 4.4l2 2z"/></symbol><symbol id="i-checkc" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.3 14.6L6 11.9l1.8-1.8 2.9 2.9 5.5-5.5 1.8 1.8z"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M6.4 4.6 4.6 6.4 10.2 12l-5.6 5.6 1.8 1.8L12 13.8l5.6 5.6 1.8-1.8L13.8 12l5.6-5.6-1.8-1.8L12 10.2z"/></symbol><symbol id="i-xc" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 12.8-1.4 1.4L12 13.4l-2.8 2.8-1.4-1.4L10.6 12 7.8 9.2l1.4-1.4L12 10.6l2.8-2.8 1.4 1.4L13.4 12z"/></symbol><symbol id="i-undo" viewBox="0 0 24 24"><path d="M12 4.6V1L6.4 6.6 12 12.2V8.2a5.8 5.8 0 1 1-5.8 5.8H2.6A9.4 9.4 0 1 0 12 4.6z"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.6V6h-2.4v7.6l5.3 3.2 1.2-2z"/></symbol><symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M6 2h12v2.6c0 2.4-1.7 4.5-4 5.4v.2c2.3.9 4 3 4 5.4V22H6v-6.4c0-2.4 1.7-4.5 4-5.4v-.2c-2.3-.9-4-3-4-5.4z"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><path d="M9 1.8h6a1 1 0 0 1 1 1v.6h2.4a1.6 1.6 0 0 1 1.6 1.6v15.4a1.6 1.6 0 0 1-1.6 1.6H5.6A1.6 1.6 0 0 1 4 20.4V5a1.6 1.6 0 0 1 1.6-1.6H8v-.6a1 1 0 0 1 1-1zm-2 9.4v2h10v-2zm0 4.4v2h7v-2z"/></symbol><symbol id="i-camera" viewBox="0 0 24 24"><path d="M9.2 3h5.6l1.5 2.2H20A2 2 0 0 1 22 7.2V19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7.2a2 2 0 0 1 2-2h3.7zM12 8.4a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 0 0 0-9.8zm0 2.2a2.7 2.7 0 1 1 0 5.4 2.7 2.7 0 0 1 0-5.4z"/></symbol><symbol id="i-toolbox" viewBox="0 0 24 24"><path d="M9 2h6a1.4 1.4 0 0 1 1.4 1.4V6H19a2 2 0 0 1 2 2v3H3V8a2 2 0 0 1 2-2h2.6V3.4A1.4 1.4 0 0 1 9 2zm1 4h4V4.4h-4zM3 13h5.4v2h7.2v-2H21v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol><symbol id="i-ban" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM4.6 12A7.4 7.4 0 0 1 16 5.8L5.8 16A7.3 7.3 0 0 1 4.6 12zm7.4 7.4a7.3 7.3 0 0 1-4-1.2L18.2 8a7.4 7.4 0 0 1-6.2 11.4z"/></symbol><symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 2 1 21.4h22zm-1.2 6.6h2.4v6.6h-2.4zm0 8.4h2.4v2.4h-2.4z"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M13.2 4.4 11.4 6.2l4.5 4.4H3.6v2.8h12.3l-4.5 4.4 1.8 1.8 7.6-7.6z"/></symbol><symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 2.2S4.8 10 4.8 14.4a7.2 7.2 0 1 0 14.4 0C19.2 10 12 2.2 12 2.2z"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.6 1.8 3.8 14.2h6L8.8 22.2l10-12.6h-6z"/></symbol><symbol id="i-broom" viewBox="0 0 24 24"><path d="M15.6 1.8 22 8.2l-3.6 2.2-5-5zM3.3 20.3l6.8-9.4 4.8 4.8-9.4 6.8a1.4 1.4 0 0 1-2.2-2.2z"/></symbol><symbol id="i-toilet" viewBox="0 0 24 24"><path d="M5 2h3v7.6h11.6v2.1A8 8 0 0 1 15 19v3H9v-3a8 8 0 0 1-4.6-7.2V3a1 1 0 0 1 .6-1zm2 1.8v6H5.8v-6z"/></symbol><symbol id="i-tap" viewBox="0 0 24 24"><path d="M7 2.4h2.6v4.2H15a4.6 4.6 0 0 1 4.6 4.6v1.2H17v-1.2A2 2 0 0 0 15 9.2H9.6v3.8H7zM2.6 15.2h18.8v1.6a5.2 5.2 0 0 1-5.2 5.2H7.8a5.2 5.2 0 0 1-5.2-5.2z"/></symbol><symbol id="i-drain" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM6.2 8.4h11.6v2H6.2zm0 4.6h11.6v2H6.2z"/></symbol><symbol id="i-gear" viewBox="0 0 24 24"><path d="m20.6 13.6.1-1.6-.1-1.6 2-1.6-2-3.4-2.4.9a7.6 7.6 0 0 0-2.7-1.6L15 1.8H9l-.5 2.9a7.6 7.6 0 0 0-2.7 1.6l-2.4-.9-2 3.4 2 1.6-.1 1.6.1 1.6-2 1.6 2 3.4 2.4-.9a7.6 7.6 0 0 0 2.7 1.6l.5 2.9h6l.5-2.9a7.6 7.6 0 0 0 2.7-1.6l2.4.9 2-3.4zM12 15.6a3.6 3.6 0 1 1 0-7.2 3.6 3.6 0 0 1 0 7.2z"/></symbol><symbol id="i-inbox" viewBox="0 0 24 24"><path d="M4.4 3h15.2l3 10.2V21H1.4v-7.8zm1.4 2.6-2 7.6h4.6l1 2.8h5.2l1-2.8h4.6l-2-7.6z"/></symbol><symbol id="i-unlock" viewBox="0 0 24 24"><path d="M12 1.6a5.4 5.4 0 0 1 5.4 5.4h-2.6a2.8 2.8 0 0 0-5.6 0v2.6h9.4a1.6 1.6 0 0 1 1.6 1.6v9.2a1.6 1.6 0 0 1-1.6 1.6H5.4a1.6 1.6 0 0 1-1.6-1.6v-9.2a1.6 1.6 0 0 1 1.6-1.6h1.2V7A5.4 5.4 0 0 1 12 1.6z"/></symbol><symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 1.6 14.4 9 22 12l-7.6 3L12 22.4 9.6 15 2 12l7.6-3z"/></symbol><symbol id="i-ring" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 3a7 7 0 1 1 0 14 7 7 0 0 1 0-14z"/></symbol><symbol id="i-up" viewBox="0 0 24 24"><path d="m12 3.2 8 8-2 2-4.6-4.6V20.8h-2.8V8.6L6 13.2l-2-2z"/></symbol><symbol id="i-wave" viewBox="0 0 24 24"><path d="M12 2.6c1.2 0 2 .9 2 2.1v6h.8V3.6c0-1.2.9-2 2-2s2 .8 2 2V15c0 4-3.2 7.2-7.2 7.2a7.2 7.2 0 0 1-6.3-3.6L2 13.4a1.9 1.9 0 0 1 .8-2.6 2 2 0 0 1 2.6.7l1.6 2.3V5.5c0-1.2.9-2.1 2-2.1s2 .9 2 2.1v5.2h.8v-6c0-1.2.9-2.1 2.2-2.1z"/></symbol></svg>
+
+<div class="fx-auth" id="loginScreen">
+ <div class="fx-bg"><span class="fx-blob b1"></span><span class="fx-blob b2"></span><span class="fx-blob b3"></span><span class="fx-grid"></span></div>
+ <div class="fx-card">
+  <div class="fx-logo"><span class="fx-logo-mark"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg></span><span class="fx-logo-text">fixflow</span></div>
+  <h1 class="fx-title">Let's get that fixed.</h1>
+  <p class="fx-sub">Sign in with your name and room number to report a facility problem.</p>
+  <form id="loginForm" class="fx-form">
+   <div class="fx-field"><span class="fx-ico"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><input id="loginName" type="text" placeholder=" " required><label>Full name</label></div>
+   <div class="fx-field"><span class="fx-ico"><svg class="ic" aria-hidden="true"><use href="#i-door"/></svg></span><input id="loginRoom" type="text" placeholder=" " required><label>Room number</label></div>
+   <button class="fx-submit" type="submit">Enter FixFlow<span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+   <button type="button" class="fx-ghost" id="guestBtn">Continue as guest</button>
+  </form>
+  <div class="fx-strip"><div><b>6</b><i>blocks covered</i></div><div><b>24h</b><i>resolution target</i></div><div><b>94%</b><i>on-time repairs</i></div></div>
+  <p class="fx-foot">Need help? <a href="#">Contact campus support</a></p>
+ </div>
+</div>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg></div><div><strong>fixflow</strong><span>FACILITY OPERATIONS</span></div></div>
+    <div class="workspace-label">WORKSPACE</div>
+    <nav>
+      <a class="nav-item active" data-page="overview"><span><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span> Overview</a>
+      <a class="nav-item" data-page="reports"><span><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg></span> Reports <b id="navReports" class="nav-count" style="display:none">0</b></a>
+      <a class="nav-item" data-page="map"><span><svg class="ic" aria-hidden="true"><use href="#i-grid"/></svg></span> Facility map</a>
+      <a class="nav-item" data-page="analytics"><span><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg></span> Analytics</a>
+    </nav>
+    <div class="workspace-label team-label">TEAM</div>
+    <nav><a class="nav-item" data-page="technician"><span><svg class="ic" aria-hidden="true"><use href="#i-tools"/></svg></span> Maintenance view <b id="navTech" class="nav-count" style="display:none">0</b></a><a class="nav-item" data-page="admin"><span><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></span> Administration <b id="navAdmin" class="nav-count coral" style="display:none">0</b></a><a class="nav-item" data-page="notifications"><span><svg class="ic" aria-hidden="true"><use href="#i-bell"/></svg></span> Notifications <b id="navNotif" class="nav-count coral" style="display:none">0</b></a></nav>
+    <div class="sidebar-bottom"><button id="wipeBtn" class="wipe-btn">Clear demo data</button><div class="status-dot"></div><div><strong>All systems operational</strong><small>Last synced just now</small></div></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="breadcrumb"><span>Polytechnic Campus</span><i>/</i><strong id="pageTitle">Overview</strong></div><div class="top-actions"><button class="icon-btn bell" data-page="notifications"><svg class="ic" aria-hidden="true"><use href="#i-bell"/></svg><em id="bellCount" style="display:none">0</em></button><div class="avatar">AD</div><div class="user-meta"><strong>Asveen Dass</strong><small>Student</small></div><span id="mgmtBadge" class="mgmt-badge" style="display:none"><svg class="ic" aria-hidden="true"><use href="#i-unlock"/></svg> Management</span><button class="logout-btn" id="logoutBtn">Log out</button></div></header>
+    <div class="content">
+      <section id="overview" class="page active-page">
+        <div class="page-intro"><div><div class="eyebrow" id="todayEyebrow"></div><h1><span id="greetText">Good morning</span>, <span id="greetName">there</span> <span class="greet-wave">👋</span></h1><p>Here's what is happening across your facilities today.</p></div><button class="primary" id="newReportBtn"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Report a problem</button></div>
+        <div class="stat-grid"><div class="stat-card"><div class="stat-top"><span>Reports today</span><span class="stat-icon blue"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg></span></div><strong id="reportsToday">0</strong><small class="positive" id="todayDate">Today</small></div><div class="stat-card"><div class="stat-top"><span>In progress</span><span class="stat-icon amber"><svg class="ic" aria-hidden="true"><use href="#i-ring"/></svg></span></div><strong id="statProgress">0</strong><small class="neutral" id="statProgressSub">No active repairs</small></div><div class="stat-card"><div class="stat-top"><span>Resolved</span><span class="stat-icon green"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span></div><strong id="statResolved">0</strong><small class="positive" id="statResolvedSub">Completed repairs</small></div><div class="stat-card alert-card"><div class="stat-top"><span>Awaiting acceptance</span><span class="stat-icon red">!</span></div><strong id="statPending">0</strong><small class="negative" id="statPendingSub">Awaiting a technician</small></div></div>
+        <div class="panel sla-info-panel"><div class="sla-info-copy"><div class="eyebrow">SERVICE LEVEL AGREEMENT</div><h2>What happens after you report?</h2><p>Every report is assigned a target response and resolution time. You can follow each step from this dashboard.</p></div><div class="sla-steps"><div><b>01</b><strong>Response target</strong><span>Within 30 minutes</span></div><div><b>02</b><strong>Maintenance assigned</strong><span>Within 1 hour</span></div><div><b>03</b><strong>Resolution target</strong><span>Within 4 hours</span></div><div><b>04</b><strong>Escalation</strong><span>Automatic if overdue</span></div></div></div><div class="dashboard-grid"><div class="panel activity-panel"><div class="panel-heading"><div><h2>Live activity</h2><p>Real-time maintenance updates</p></div><button class="text-btn" data-page="reports">View all <span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></button></div><div class="activity-list" id="activityList"></div></div><div class="panel health-panel"><div class="panel-heading"><div><h2>Facility health</h2><p>Campus overview</p></div><button class="text-btn" data-page="map">View campus map <span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></button></div><div class="health-map"><div class="map-lines"></div><div class="facility-node node-a" id="ndA"><span class="node-dot green-dot"></span><strong>Block A · Female</strong><small>All clear</small></div><div class="facility-node node-b" id="ndB"><span class="node-dot amber-dot"></span><strong>Block B · Female</strong><small>2 active issues</small></div><div class="facility-node node-c" id="ndC"><span class="node-dot red-dot"></span><strong>Block C · Female</strong><small>3 active issues</small></div><div class="facility-node node-d" id="ndD"><span class="node-dot green-dot"></span><strong>Block D · Male</strong><small>All clear</small></div><div class="facility-node node-e" id="ndE"><span class="node-dot green-dot"></span><strong>Block E · Male</strong><small>All clear</small></div><div class="facility-node node-f" id="ndF"><span class="node-dot amber-dot"></span><strong>Block F · Male</strong><small>1 active issue</small></div></div><div class="health-legend"><span><i class="green-dot"></i>Operational <b>2</b></span><span><i class="amber-dot"></i>Attention <b>1</b></span><span><i class="red-dot"></i>Critical <b>1</b></span></div></div></div>
+        <div class="bottom-grid"><div class="panel sla-panel"><div class="panel-heading"><div><h2>SLA performance</h2><p>Last 30 days</p></div><span class="score">94.2%</span></div><div class="chart"><div class="chart-grid"><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 600 150" preserveAspectRatio="none"><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f6cff" stop-opacity=".25"/><stop offset="1" stop-color="#4f6cff" stop-opacity="0"/></linearGradient></defs><path d="M0 112 C38 109 38 92 74 95 S120 74 150 81 S198 57 224 64 S270 75 300 59 S342 69 370 45 S418 58 447 41 S490 54 520 24 S567 39 600 16 L600 150 L0 150Z" fill="url(#fill)"/><path d="M0 112 C38 109 38 92 74 95 S120 74 150 81 S198 57 224 64 S270 75 300 59 S342 69 370 45 S418 58 447 41 S490 54 520 24 S567 39 600 16" fill="none" stroke="#5069f5" stroke-width="3"/></svg></div><div class="chart-labels"><span>01 Sep</span><span>08 Sep</span><span>15 Sep</span><span>22 Sep</span><span>27 Sep</span></div></div>
+      </div></section>
+      <section id="reports" class="page"><div class="page-intro"><div><div class="eyebrow">WORK ORDER MANAGEMENT</div><h1>All reports</h1><p><span id="reportCount">0 reports</span> · Track every fault from submission to resolution.</p></div><button class="primary" id="newReportBtn2"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Report a problem</button></div><div class="panel table-panel"><div class="table-toolbar"><div class="search"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg> <input placeholder="Search report ID, location or issue..." id="searchInput"></div></div><div class="table-wrap"><table><thead><tr><th>REPORT</th><th>LOCATION</th><th>ISSUE</th><th>PRIORITY</th><th>STATUS</th></tr></thead><tbody id="reportTable"></tbody></table></div></div></section>
+      <section id="map" class="page"><div class="page-intro"><div><div class="eyebrow">CAMPUS OPERATIONS</div><h1>Facility map</h1><p>Monitor building health at a glance.</p></div></div><div class="panel full-map"><div class="big-map"><div class="map-road r1"></div><div class="map-road r2"></div><div class="big-building bb-a" id="bbA"><span>BLOCK A · FEMALE</span><small>Operational</small></div><div class="big-building bb-b" id="bbB"><span>BLOCK B · FEMALE</span><small>Operational</small></div><div class="big-building bb-c" id="bbC"><span>BLOCK C · FEMALE</span><small>Operational</small></div><div class="big-building bb-d" id="bbD"><span>BLOCK D · MALE</span><small>Operational</small></div><div class="big-building bb-e" id="bbE"><span>BLOCK E · MALE</span><small>Operational</small></div><div class="big-building bb-f" id="bbF"><span>BLOCK F · MALE</span><small>Operational</small></div></div><div class="map-side"><h2>Facility status</h2><div id="facilityStatus"></div></div></div></section>
+      <section id="analytics" class="page"><div class="page-intro"><div><div class="eyebrow">INSIGHTS & TRENDS</div><h1>Analytics</h1><p>Make smarter decisions with your maintenance data.</p></div></div><div class="analytics-grid"><div class="panel big-stat"><span>Total reports</span><strong id="monTotal">0</strong><small class="neutral" id="monSub">No reports submitted yet</small></div><div class="panel big-stat"><span>Resolved this month</span><strong id="monDone">0</strong><small class="positive" id="monDoneSub">No repairs completed yet</small><div class="donut" id="monDonut"><span>0%</span></div></div><div class="panel category-panel"><div class="panel-heading"><div><h2>Reports by category</h2><p id="monthLabel">September 2026</p></div></div><div id="catBars"></div></div><div class="panel recurring-large"><div class="panel-heading"><div><h2>Recurring issue alert</h2><p>Automatic pattern detection</p></div><span class="alert-badge" id="recBadge">MONITORING</span></div><div class="alert-content"><div class="alert-icon" id="recIcon"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></div><div id="recBody"><h3>No recurring problems</h3><p>Locations with three or more reports this month will be flagged here automatically.</p></div></div></div></div></section>
+      <section id="technician" class="page"><div class="page-intro"><div><div class="eyebrow">MAINTENANCE TEAM</div><h1>Maintenance view</h1><p>Here are the jobs assigned to the maintenance team.</p></div><div class="speed-wrap"><label class="speed-switch"><input type="checkbox" id="demoSpeed"><span class="track"><span class="knob"></span></span><span class="speed-text"><strong>Demo speed</strong><small id="speedNote">Real timing · Urgent 2h · High 4h · Normal 8h</small></span></label></div><div class="tech-profile"><div class="avatar tech"><svg class="ic" aria-hidden="true"><use href="#i-toolbox"/></svg></div><div><strong>Maintenance team</strong><small>On duty</small></div></div></div><div class="stat-grid tech-stats"><div class="stat-card"><span>Urgent jobs</span><strong id="tUrgent">0</strong><small class="negative" id="tUrgentSub">None right now</small></div><div class="stat-card"><span>New requests</span><strong id="tNew">0</strong><small class="neutral">Awaiting acceptance</small></div><div class="stat-card"><span>In progress</span><strong id="tProgress">0</strong><small class="neutral">Repairs running</small></div><div class="stat-card"><span>Completed</span><strong id="tDone">0</strong><small class="positive">Finished repairs</small></div></div><div class="panel job-panel"><div class="panel-heading"><div><h2>Active jobs</h2><p>Prioritised by SLA deadline</p></div></div><div id="jobList" class="job-list"></div></div></section>
+      <section id="notifications" class="page"><div class="page-intro"><div><div class="eyebrow">UPDATES & ALERTS</div><h1>Notifications</h1><p>Stay on top of important facility events.</p></div><button class="text-btn">Mark all as read</button></div><div class="panel notification-panel" id="notificationsList"></div></section>
+      <section id="admin" class="page"><div class="page-intro"><div><div class="eyebrow">CAMPUS ADMINISTRATION</div><h1>Administration</h1><p>Head of Dormitory · supervision, escalation and accountability.</p></div><div class="admin-id"><div class="avatar admin"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></div><div><strong>Head of Dormitory</strong><small>Supervisory access</small></div></div></div>
+<div class="stat-grid admin-kpi">
+ <div class="stat-card"><div class="stat-top"><span>Total reports</span><span class="stat-icon blue"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg></span></div><strong id="aTotal">0</strong><small class="neutral" id="aTotalSub">All time</small></div>
+ <div class="stat-card"><div class="stat-top"><span>Still open</span><span class="stat-icon amber"><svg class="ic" aria-hidden="true"><use href="#i-ring"/></svg></span></div><strong id="aOpen">0</strong><small class="neutral" id="aOpenSub">Not yet closed</small></div>
+ <div class="stat-card alert-card"><div class="stat-top"><span>SLA breaches</span><span class="stat-icon red">!</span></div><strong id="aBreach">0</strong><small class="negative" id="aBreachSub">Within target</small></div>
+ <div class="stat-card"><div class="stat-top"><span>Avg. resolution</span><span class="stat-icon green"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg></span></div><strong id="aAvg">—</strong><small class="neutral">Across completed repairs</small></div>
+ <div class="stat-card"><div class="stat-top"><span>Proof compliance</span><span class="stat-icon blue"><svg class="ic" aria-hidden="true"><use href="#i-camera"/></svg></span></div><strong id="aProof">100%</strong><small class="neutral" id="aProofSub">Repairs with photo evidence</small></div>
+ <div class="stat-card alert-card"><div class="stat-top"><span>Pending approvals</span><span class="stat-icon amber"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></span></div><strong id="aPending">0</strong><small class="neutral" id="aPendingSub">Awaiting your decision</small></div><div class="stat-card"><div class="stat-top"><span>Approved spend</span><span class="stat-icon green">RM</span></div><strong id="aSpend">RM 0</strong><small class="neutral" id="aSpendSub">Across approved jobs</small></div><div class="stat-card"><div class="stat-top"><span>Resident approved</span><span class="stat-icon green"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span></div><strong id="aApproved">0</strong><small class="positive" id="aApprovedSub">Verified by residents</small></div>
+</div>
+<div class="panel admin-panel"><div class="panel-heading"><div><h2>Materials &amp; costing approvals</h2><p>Work cannot start until you approve the spend</p></div><span class="alert-badge" id="quoteBadge">NONE PENDING</span></div><div id="quoteList"></div></div><div class="panel admin-panel"><div class="panel-heading"><div><h2>Accountability log</h2><p>Every action taken, with a timestamp</p></div><button class="outline-btn small" id="exportCsv"><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>Export CSV</button></div><div id="auditLog" class="audit"></div></div>
+<div class="admin-grid">
+ <div class="panel"><div class="panel-heading"><div><h2>Block performance</h2><p>Ranked worst first</p></div></div><div id="blockRank"></div></div>
+ <div class="panel"><div class="panel-heading"><div><h2>Supervisory control</h2><p>Override the status of any report</p></div></div><div id="adminControl"></div></div>
+</div>
+</section>
+    </div>
+  </main>
+</div>
+
+<input type="file" id="proofInput" accept="image/*" multiple style="position:fixed;left:-9999px;width:1px;height:1px">
+<div class="modal-overlay" id="quoteModal"><div class="modal"><button class="modal-close" id="quoteClose">×</button><div class="eyebrow">MATERIALS &amp; COSTING</div><h2 id="quoteTitle">Submit for approval</h2><p class="modal-sub" id="quoteSub">List what the repair needs. The Head of Dormitory must approve before work can start.</p>
+<div class="modal-scroll">
+ <div class="quote-head"><span>Material / service</span><span>Qty</span><span>Unit (RM)</span><span></span></div>
+ <div id="quoteRows"></div>
+ <button type="button" class="mini-btn" id="addRow"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Add material</button>
+ <label>Notes for the Head of Dormitory<textarea id="quoteNote" placeholder="e.g. pipe section is corroded and must be replaced, not patched"></textarea></label>
+ <div class="quote-total"><span>Estimated total</span><strong id="quoteTotal">RM 0.00</strong></div>
+</div>
+<button class="primary quote-send" id="quoteSubmit">Send to Head of Dormitory</button></div></div>
+<div class="modal-overlay" id="modal"><div class="modal"><button class="modal-close">×</button><div class="eyebrow">NEW MAINTENANCE REPORT</div><h2>Report a facility issue</h2><p class="modal-sub">Create a work order for your maintenance team.</p><div class="modal-scroll"><div class="modal-row"><label>Block<select id="locBlock"><option value="Block A · Female toilet">Block A · Female</option><option value="Block B · Female toilet">Block B · Female</option><option value="Block C · Female toilet">Block C · Female</option><option value="Block D · Male toilet">Block D · Male</option><option value="Block E · Male toilet">Block E · Male</option><option value="Block F · Male toilet">Block F · Male</option></select></label><label>Floor<select id="locFloor"><option value="Level 1">Level 1</option><option value="Level 2">Level 2</option><option value="Level 3">Level 3</option><option value="Level 4">Level 4</option></select></label></div><label>Issue category<select id="issueCat"><option>Clogged toilet</option><option>Clogged sink</option><option>Clogged drainage</option><option>Damaged equipments</option><option>Overflowing water</option><option>Damaged electrical</option><option>Cleaning</option></select></label><label>Description<textarea placeholder="Describe the problem..."></textarea></label><label>Upload picture <span class="optional">(optional)</span><div class="upload-box" id="uploadBox"><input type="file" id="photoInput" accept="image/*" multiple><div class="upload-icon"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></div><strong>Choose pictures</strong><small>PNG, JPG or WEBP · up to 5 MB each</small><div class="preview-list" id="previewList"></div></div></label><div class="modal-row"><label>Priority<select id="issuePri"><option>High</option><option>Normal</option><option>Urgent</option></select></label></div></div><button class="primary submit-report">Create report <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button><div class="scroll-hint">Scroll inside the form to see every option</div></div></div>
+<script>
+var FF_BOOT=Date.now();
+/* ===== one-time data reset: bump FF_DATA_VERSION to start everyone fresh ===== */
+var FF_DATA_VERSION='2026-09-29-c';
+(function(){
+ var KEYS=['ffJobs','ffNewJobs','ffAccepted','ffProofs','ffVerified','ffFired','ffCount','ffSpeed','ffNotifs','ffAudit','ffEsc','ffQuotes','ffAged'];
+ try{
+  if(localStorage.getItem('ffDataVersion')!==FF_DATA_VERSION){
+   KEYS.forEach(function(k){localStorage.removeItem(k)});
+   sessionStorage.removeItem('ffMgmt');
+   localStorage.setItem('ffDataVersion',FF_DATA_VERSION);
+  }
+ }catch(e){}
+})();
+
+document.getElementById('loginForm')?.addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('loginName').value.trim();const room=document.getElementById('loginRoom').value.trim();document.querySelector('.user-meta strong').textContent=name;var gn=document.getElementById('greetName');if(gn)gn.textContent=name.split(' ')[0];window.FF_ROOM=room;document.querySelector('.user-meta small').textContent='Student · Room '+room;document.querySelector('.top-actions .avatar').textContent=name.split(' ').map(x=>x[0]).join('').slice(0,2).toUpperCase();document.getElementById('loginScreen').classList.add('hidden')});document.getElementById('guestBtn')?.addEventListener('click',function(){document.querySelector('.user-meta strong').textContent='Guest';document.querySelector('.user-meta small').textContent='Guest access';document.querySelector('.top-actions .avatar').textContent='G';var g=document.getElementById('greetName');if(g)g.textContent='Guest';window.FF_ROOM='';document.getElementById('loginScreen').classList.add('hidden')});document.getElementById('logoutBtn')?.addEventListener('click',()=>{document.getElementById('loginScreen').classList.remove('hidden');window.FF_MGMT=false;window.FF_ADMIN=false;try{sessionStorage.removeItem('ffMgmt');sessionStorage.removeItem('ffAdmin')}catch(e){}ffBadge();var gn2=document.getElementById('greetName');if(gn2)gn2.textContent='there';document.getElementById('loginName').value='';document.getElementById('loginRoom').value='';});
+const activityData=[];
+const reportData=[];
+const notifications=[];
+function renderActivity(){document.querySelector('#activityList').innerHTML=activityData.length?activityData.map(a=>`<div class="activity"><div class="act-icon">${a[0]}</div><div class="activity-main"><strong>${a[1]}</strong><p>${a[2]}</p></div><span class="activity-time">${a[3]}</span><span class="pill ${a[5]}">${a[4]}</span></div>`).join(''):'<p class="empty-row">No activity yet today.</p>'}
+function renderReports(filter=''){let rows=reportData.filter(r=>r.join(' ').toLowerCase().includes(filter.toLowerCase()));document.querySelector('#reportTable').innerHTML=rows.length?rows.map(r=>`<tr><td><strong class="report-id">${r[0]}</strong><small>Today, 10:42 PM</small></td><td>${r[1]}</td><td>${r[2]}</td><td><span class="pill ${r[4]==='Urgent'||r[4]==='High'?'red-pill':'amber-pill'}">${r[4].toUpperCase()}</span></td><td><span class="pill ${(typeof ffVerified==='function'&&ffVerified()[r[0]])?'green-pill':((typeof ffProofs==='function'&&ffProofs()[r[0]])?'amber-pill':r[6])}">${(typeof ffVerified==='function'&&ffVerified()[r[0]])?'CLOSED <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>':((typeof ffProofs==='function'&&ffProofs()[r[0]])?'AWAITING YOUR REVIEW':r[5].toUpperCase())}</span>${(typeof ffProofs==='function'&&ffProofs()[r[0]])?`<button class="proof-btn ff-proofbtn" data-id="${r[0]}"><svg class="ic" aria-hidden="true"><use href="#i-camera"/></svg>View proof</button>`:''}</td></tr>`).join(''):'<tr><td colspan="5" class="empty-row">No reports yet. Tap “Report a problem” to submit the first one.</td></tr>'}
+
+function renderNotifications(){document.querySelector('#notificationsList').innerHTML=notifications.length?notifications.map(n=>`<div class="notification ${n[4]?'unread':''}"><div class="notif-icon">${n[0]}</div><div><h3>${n[1]}</h3><p>${n[2]}</p><time>${ffAgo(n[3])}</time>${n[5]?`<button class="proof-btn ff-proofbtn" data-id="${n[5]}"><svg class="ic" aria-hidden="true"><use href="#i-camera"/></svg>Review proof &amp; approve</button>`:''}</div>${n[4]?'<i class="unread-dot"></i>':''}</div>`).join(''):'<p class="empty-row">No notifications yet.</p>'}
+window.FF_MGMT=sessionStorage.getItem('ffMgmt')==='1';window.FF_ADMIN=sessionStorage.getItem('ffAdmin')==='1';function ffBadge(){var b=document.getElementById('mgmtBadge');if(b)b.style.display=window.FF_MGMT?'inline-flex':'none'}function go(page){if(page==='admin'&&!window.FF_ADMIN){const ak=prompt('Administration access. Enter the supervisor passkey:');if(ak!=='ADMIN2026'){alert('Access denied. This section is for the Head of Dormitory and campus administration.');return}window.FF_ADMIN=true;try{sessionStorage.setItem('ffAdmin','1')}catch(e){}ffBadge();ffAudit('Supervisor signed in','Administration section unlocked');alert('Supervisory access unlocked for this session.')}
+ if(page==='technician'&&!window.FF_MGMT){const key=prompt('Management team access required. Enter passkey:');if(key!=='FIXFLOW2026'){alert('Access denied. This section is restricted to the management team.');return}window.FF_MGMT=true;try{sessionStorage.setItem('ffMgmt','1')}catch(e){}ffBadge();alert('Management access unlocked. You now have full access to all maintenance sections for this session.')}document.querySelectorAll('.page').forEach(p=>p.classList.remove('active-page'));document.getElementById(page)?.classList.add('active-page');if(page==='notifications')setTimeout(ffMarkRead,1200);document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.page===page));const title=page==='admin'?'Administration':page==='technician'?'Maintenance view':page[0].toUpperCase()+page.slice(1);document.getElementById('pageTitle').textContent=title;window.scrollTo({top:0,behavior:'smooth'})}
+const photoInput=document.getElementById('photoInput');const previewList=document.getElementById('previewList');
+window.FF_PHOTOS=[];
+function ffRenderPhotos(){previewList.innerHTML=window.FF_PHOTOS.map(function(f,i){return '<figure class="thumb"><img src="'+f.src+'" title="'+f.name+'"><button type="button" class="thumb-del" data-i="'+i+'" title="Remove picture">×</button><figcaption>'+f.name+'</figcaption></figure>'}).join('')+(window.FF_PHOTOS.length?'<button type="button" class="clear-photos" id="clearPhotos">Remove all</button>':'')}
+photoInput?.addEventListener('change',function(e){[...e.target.files].forEach(function(file){if(window.FF_PHOTOS.length>=5)return;const reader=new FileReader();reader.onload=function(ev){window.FF_PHOTOS.push({src:ev.target.result,name:file.name.length>14?file.name.slice(0,12)+'…':file.name});ffRenderPhotos()};reader.readAsDataURL(file)});e.target.value=''});
+previewList?.addEventListener('click',function(e){const d=e.target.closest('.thumb-del');if(d){e.preventDefault();e.stopPropagation();window.FF_PHOTOS.splice(+d.dataset.i,1);ffRenderPhotos()}if(e.target.id==='clearPhotos'){e.preventDefault();e.stopPropagation();window.FF_PHOTOS=[];ffRenderPhotos()}});
+document.addEventListener('click',e=>{const nav=e.target.closest('[data-page]');if(nav)go(nav.dataset.page);if(e.target.closest('#newReportBtn')||e.target.closest('#newReportBtn2'))document.getElementById('modal').classList.add('open');if(e.target.closest('.modal-close')||e.target.id==='modal')document.getElementById('modal').classList.remove('open');if(e.target.closest('.submit-report')){var sels=document.querySelectorAll('#modal select');var bsel=document.getElementById('locBlock'),fsel=document.getElementById('locFloor');var bv=bsel?bsel.value:'Block A · Female toilet';var fv=fsel?fsel.value:'Level 1';var loc=bv.replace(' · ',' · '+fv+' · ');var cat=document.getElementById('issueCat')?document.getElementById('issueCat').value:'General fault';var pri=document.getElementById('issuePri')?document.getElementById('issuePri').value:'Normal';var rid='#FF-'+(2050+ffNewCount());document.getElementById('modal').classList.remove('open');if(window.FF)window.FF.addReport();ffAddJob({id:rid,title:cat,loc:loc,pri:pri,icon:(FF_ICON[cat]||'<svg class="ic" aria-hidden="true"><use href="#i-tools"/></svg>'),pending:true,created:Date.now()});ffAudit('Report submitted',rid+' · '+cat+' · '+loc);reportData.unshift([rid,loc,cat,'',pri,'Pending','amber-pill']);window.FF_PHOTOS=[];if(typeof ffRenderPhotos==='function')ffRenderPhotos();ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-inbox"/></svg>','Report submitted','Your report '+rid+' for '+loc+' has been sent to the maintenance team.','blue');ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-hourglass"/></svg>','Waiting for the maintenance team',rid+' ('+pri+' priority) is in the queue for acceptance.','amber');go('reports');renderReports()}});
+document.getElementById('searchInput')?.addEventListener('input',e=>renderReports(e.target.value));renderActivity();renderReports();renderNotifications();
+
+
+(function(){
+  function pad(n){return n<10?'0'+n:''+n}
+  var today=new Date();
+  var dstr=today.toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'});
+  var key=(typeof ffDayKey==='function')?ffDayKey():today.toISOString().slice(0,10);
+  var el=document.getElementById('todayDate'); if(el) el.innerHTML='<i>'+dstr+'</i>';
+  var ml=document.getElementById('monthLabel'); if(ml) ml.textContent=today.toLocaleDateString(undefined,{month:'long',year:'numeric'});
+  var gt=document.getElementById('greetText');
+  if(gt){var hr=today.getHours();gt.textContent=hr<12?'Good morning':(hr<18?'Good afternoon':'Good evening')}
+
+  window.FF={};
+  function stored(){try{var s=JSON.parse(localStorage.getItem('ffCount')||'{}');return (s.date===key)?s.count:0}catch(e){return 0}}
+  window.FF.count=stored();
+  function paint(){var c=document.getElementById('reportsToday'); if(c) c.textContent=window.FF.count}
+  window.FF.addReport=function(){
+    window.FF.count++;
+    try{localStorage.setItem('ffCount',JSON.stringify({date:key,count:window.FF.count}))}catch(e){}
+    paint();
+  };
+  window.FF.removeReport=function(){
+    if(window.FF.count>0)window.FF.count--;
+    try{localStorage.setItem('ffCount',JSON.stringify({date:key,count:window.FF.count}))}catch(e){}
+    paint();
+  };
+  paint();
+  // reset automatically when the day rolls over while the page stays open
+  setInterval(function(){
+    var n=new Date(), nk=(typeof ffDayKey==='function')?ffDayKey():n.toISOString().slice(0,10);
+    if(nk!==key){key=nk;window.FF.count=0;paint();
+      var e2=document.getElementById('todayDate'); if(e2) e2.innerHTML='<i>'+n.toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'})+'</i>';
+    }
+  },60000);
+})();
+
+document.querySelectorAll('.fx-role').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.fx-role').forEach(function(x){x.classList.remove('active')});b.classList.add('active');window.FF_ROLE=b.dataset.role})});
+ffBadge();
+
+
+function ffFired(){try{return JSON.parse(localStorage.getItem('ffFired')||'{}')}catch(e){return {}}}
+function ffSaveFired(o){try{localStorage.setItem('ffFired',JSON.stringify(o))}catch(e){}}
+/* ===== technician live jobs with SLA countdown ===== */
+var FF_SLA={'Urgent':2,'High':4,'Normal':8};
+var FF_JOBS=[];
+function ffJobState(){try{return JSON.parse(localStorage.getItem('ffJobs')||'{}')}catch(e){return {}}}
+function ffNewJobs(){try{return JSON.parse(localStorage.getItem('ffNewJobs')||'[]')}catch(e){return []}}
+function ffNewCount(){return ffNewJobs().length+1}
+function ffAddJob(j){var a=ffNewJobs();a.unshift(j);try{localStorage.setItem('ffNewJobs',JSON.stringify(a))}catch(e){}ffRenderJobs()}
+function ffAllJobsRaw(){return ffNewJobs().concat(FF_JOBS)}
+function ffAllJobs(){var v=(typeof ffVerified==='function')?ffVerified():{};return ffAllJobsRaw().filter(function(j){return !v[j.id]})}
+function ffAccepted(){try{return JSON.parse(localStorage.getItem('ffAccepted')||'{}')}catch(e){return {}}}
+function ffSaveAccepted(a){try{localStorage.setItem('ffAccepted',JSON.stringify(a))}catch(e){}}
+function ffSaveJobs(s){try{localStorage.setItem('ffJobs',JSON.stringify(s))}catch(e){}}
+function ffClock(ms){if(ms<0)ms=0;var t=Math.floor(ms/1000),hh=Math.floor(t/3600),mm=Math.floor(t%3600/60),ss=t%60;
+ return (hh<10?'0':'')+hh+':'+(mm<10?'0':'')+mm+':'+(ss<10?'0':'')+ss}
+function ffRenderJobs(){
+ var wrap=document.getElementById('jobList'); if(!wrap)return;
+ var st=ffJobState(),acc=ffAccepted(),now=Date.now();
+ wrap.innerHTML=ffAllJobs().map(function(j){
+  var ePri=j.pri;var hrs=FF_SLA[ePri],total=hrs*3600000,started=st[j.id],pri=ePri.toUpperCase();
+  var pill=j.pri==='Urgent'?'red-pill':(j.pri==='High'?'red-pill':'amber-pill');
+  if(j.pending&&!acc[j.id]){
+   return '<div class="job-card new-job"><div class="job-priority new"></div><div class="job-main">'
+   +'<div class="job-head"><span class="report-id">'+j.id+'</span><span class="pill blue-pill">NEW REPORT</span><span class="time-left muted">Awaiting maintenance team</span></div>'
+   +'<h3>'+j.title+'</h3><p>'+j.loc+'</p>'
+   +'<div class="job-meta">Reported by a user · '+pri+' priority · '+hrs+'-hour repair window</div>'
+   +'<div class="job-actions"><button class="primary small ff-accept" data-id="'+j.id+'">Accept job</button><button class="outline-btn small ff-decline" data-id="'+j.id+'">Decline</button></div>'
+   +'</div><div class="job-thumb">'+j.icon+'</div></div>';
+  }
+  if(!started){
+   var q=ffQuotes()[j.id];
+   var gate;
+   if(!q) gate='<div class="gate-note">Materials and costing must be approved by the Head of Dormitory before this repair can start.</div>'
+     +'<div class="job-actions"><button class="primary small ff-quote" data-id="'+j.id+'"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg>List materials &amp; costing</button></div>';
+   else if(q.status==='pending') gate=ffQuoteCard(q,j.id,false)
+     +'<div class="job-actions"><button class="outline-btn small ff-quote" data-id="'+j.id+'">Edit submission</button></div>';
+   else if(q.status==='rejected') gate=ffQuoteCard(q,j.id,false)
+     +'<div class="job-actions"><button class="primary small ff-quote" data-id="'+j.id+'">Revise &amp; resubmit</button></div>';
+   else gate=ffQuoteCard(q,j.id,false)
+     +'<div class="job-actions"><button class="primary small ff-start" data-id="'+j.id+'">Start repair</button>'
+     +'<button class="outline-btn small ff-revise" data-id="'+j.id+'">Request cost change</button></div>';
+   return '<div class="job-card'+(j.pri==='Urgent'?' urgent-job':'')+'"><div class="job-priority'+(j.pri==='Normal'?' normal':'')+'"></div><div class="job-main">'
+   +'<div class="job-head"><span class="report-id">'+j.id+'</span><span class="pill '+pill+'">'+pri+' PRIORITY</span><span class="time-left muted"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg> '+hrs+'h repair window</span></div>'
+   +'<h3>'+j.title+'</h3><p>'+j.loc+'</p>'+gate+'</div><div class="job-thumb">'+j.icon+'</div></div>';
+  }
+  var left=started+total-now;
+  if(left>0){
+   var pct=Math.max(0,Math.min(100,(now-started)/total*100));
+   return '<div class="job-card in-progress"><div class="job-priority working"></div><div class="job-main">'
+   +'<div class="job-head"><span class="report-id">'+j.id+'</span><span class="pill amber-pill">REPAIR IN PROGRESS</span><span class="time-left"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg> '+ffClock(left)+' until completion</span></div>'
+   +'<h3>'+j.title+'</h3><p>'+j.loc+'</p>'
+   +'<div class="job-bar"><i style="width:'+pct.toFixed(1)+'%"></i></div>'
+   +'<div class="job-meta">'+pri+' priority · '+hrs+'-hour repair window</div>'
+   +(function(){var q=ffQuotes()[j.id];if(!q)return '';
+      return ffQuoteCard(q,j.id,false)+'<div class="job-actions"><button class="outline-btn small ff-revise" data-id="'+j.id+'">Request cost change</button></div>'})()
+   +'</div><div class="job-thumb">'+j.icon+'</div></div>';
+  }
+  if(!window.FF_DONEFIRED)window.FF_DONEFIRED=ffFired();
+  /* only announce a completion that happens while this page is open, and only once ever */
+  var finishedAt=(st[j.id]||0)+total, freshlyDone=(now-finishedAt)<15000 && (Date.now()-FF_BOOT)>1500;
+  if(!window.FF_DONEFIRED[j.id]){
+   window.FF_DONEFIRED[j.id]=1;ffSaveFired(window.FF_DONEFIRED);
+   if(freshlyDone)setTimeout(function(){ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>','Repair completed',j.id+' at '+j.loc+' has been fixed within the '+hrs+'-hour target. Awaiting proof photo from the maintenance crew.','green')},50);
+  }
+  var pf=ffProofs()[j.id]||[];
+  var proofHtml = pf.length
+   ? '<div class="proof-box done"><div class="proof-head"><svg class="ic" aria-hidden="true"><use href="#i-camera"/></svg> Proof of repair · '+pf.length+' photo'+(pf.length===1?'':'s')+'</div><div class="proof-strip">'
+     +pf.map(function(src,ix){return '<figure class="pthumb"><img class="ff-viewproof" data-id="'+j.id+'" data-ix="'+ix+'" src="'+src+'"><button type="button" class="pthumb-del ff-delproof" data-id="'+j.id+'" data-ix="'+ix+'" title="Remove photo">×</button></figure>'}).join('')
+     +'</div><div class="proof-acts"><button type="button" class="mini-btn ff-addproof" data-id="'+j.id+'"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Add photo</button><button type="button" class="mini-btn danger ff-clearproof" data-id="'+j.id+'">Remove all</button></div></div>'
+   : '<div class="proof-box empty ff-addproof" data-id="'+j.id+'">'
+     +'<span class="proof-ico"><svg class="ic" aria-hidden="true"><use href="#i-camera"/></svg></span><strong>Attach proof of repair</strong><small>Photograph the finished work so the user can verify it</small></div>';
+  return '<div class="job-card done-job"><div class="job-priority done"></div><div class="job-main">'
+   +'<div class="job-head"><span class="report-id">'+j.id+'</span><span class="pill green-pill">REPAIR COMPLETED</span><span class="time-left done-time"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> Completed within '+hrs+'h target</span></div>'
+   +'<h3>'+j.title+'</h3><p>'+j.loc+'</p>'+proofHtml
+   +(function(){var q=ffQuotes()[j.id];if(!q)return '';
+      return ffQuoteCard(q,j.id,false)+ffExtrasHtml(q,j.id,false)
+       +'<div class="cost-final"><span>Total approved cost for this job</span><strong>'+ffMoney(ffJobSpend(q))+'</strong></div>'})()
+   +'<div class="job-actions"><button class="primary small ff-extra" data-id="'+j.id+'"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Add additional materials &amp; cost</button>'
+   +'<button class="outline-btn small ff-reset" data-id="'+j.id+'">Reopen job</button></div></div><div class="job-thumb green-thumb"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></div></div>';
+}).join('')||'<p class="empty-row">No jobs yet. Jobs appear here when a user reports a problem.</p>';
+}
+document.addEventListener('click',function(e){
+ var s=e.target.closest('.ff-start');
+ if(s){var qq=ffQuotes()[s.dataset.id];if(!qq||qq.status!=='approved'){alert('The Head of Dormitory has not approved the materials and costing for this job yet.');return}var st=ffJobState();st[s.dataset.id]=Date.now();ffSaveJobs(st);ffRenderJobs();
+  ffAudit('Repair started',s.dataset.id+' repair began','Maintenance crew');ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-tools"/></svg>','Repair in progress','Work has started on '+s.dataset.id+'. You will be notified when it is completed.','amber');return}
+ var a=e.target.closest('.ff-accept');
+ if(a){var ac=ffAccepted();ac[a.dataset.id]=Date.now();ffSaveAccepted(ac);ffRenderJobs();
+  var i=reportData.findIndex(function(x){return x[0]===a.dataset.id});
+  if(i>-1){reportData[i][3]='';reportData[i][5]='Accepted';reportData[i][6]='amber-pill';if(typeof renderReports==='function')renderReports()}
+  ffAudit('Job accepted',a.dataset.id+' accepted by the maintenance crew','Maintenance crew');ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-toolbox"/></svg>','Job accepted','The maintenance team accepted '+a.dataset.id+'. Repair will begin shortly.','green');return}
+ var d=e.target.closest('.ff-decline');
+ if(d){if(confirm('Decline job '+d.dataset.id+'?')){var n=ffNewJobs().filter(function(x){return x.id!==d.dataset.id});try{localStorage.setItem('ffNewJobs',JSON.stringify(n))}catch(er){}ffRenderJobs()}return}
+ var r=e.target.closest('.ff-reset');
+ if(r){var s2=ffJobState();delete s2[r.dataset.id];ffSaveJobs(s2);if(window.FF_DONEFIRED){delete window.FF_DONEFIRED[r.dataset.id];ffSaveFired(window.FF_DONEFIRED)}ffRenderJobs()}
+});
+ffRenderJobs();
+setInterval(function(){ffRenderJobs();ffStats()},1000);
+
+
+function ffStats(){
+ var st=ffJobState(),acc=ffAccepted(),now=Date.now(),jobs=ffAllJobs();
+ var nw=0,prog=0,done=0,urgent=0;
+ jobs.forEach(function(j){
+  var total=(FF_SLA[j.pri]||8)*3600000,s=st[j.id];
+  var state = (j.pending&&!acc[j.id])?'new':(!s?'ready':(s+total>now?'prog':'done'));
+  if(state==='new'||state==='ready')nw++;
+  else if(state==='prog')prog++;
+  else if(state==='done')done++;
+  if(j.pri==='Urgent'&&state!=='done')urgent++;
+ });
+ function set(id,v){var e=document.getElementById(id);if(e)e.textContent=v}
+ set('tUrgent',urgent);set('tNew',nw);set('tProgress',prog);set('tDone',done);
+ set('tUrgentSub',urgent?'Needs attention':'None right now');
+ set('statProgress',prog);set('statResolved',done);set('statPending',nw);
+ set('statProgressSub',prog?'Repairs in progress':'No active repairs');
+ set('statPendingSub',nw?'Awaiting the maintenance team':'Nothing waiting');
+ function badge(id,v){var e=document.getElementById(id);if(!e)return;var s=String(v),vis=v?'':'none';if(e.textContent!==s)e.textContent=s;if(e.style.display!==vis)e.style.display=vis}
+ var ver=(typeof ffVerified==='function')?ffVerified():{};
+ /* Reports: reports still open (not closed by the resident or the Head) */
+ var openReports=reportData.filter(function(r){return !ver[r[0]]}).length;
+ /* Maintenance: jobs the crew must act on right now */
+ var qs=(typeof ffQuotes==='function')?ffQuotes():{},todo=0;
+ ffAllJobsRaw().forEach(function(j){
+  if(ver[j.id])return;
+  var q=qs[j.id],s=st[j.id],tt=(FF_SLA[j.pri]||8)*3600000;
+  if(j.pending&&!acc[j.id]){todo++;return}                      /* waiting to be accepted */
+  if(!s&&(!q||q.status==='rejected')){todo++;return}            /* costing not written / rejected */
+  if(!s&&q&&q.status==='approved'){todo++;return}               /* approved — ready to start */
+  if(s&&s+tt<=now&&!(ffProofs()[j.id]||[]).length){todo++}      /* finished, proof photo missing */
+ });
+ badge('navReports',openReports);
+ badge('navTech',todo);
+ badge('navNotif',ffUnread());
+ badge('bellCount',ffUnread());
+ var t1=document.querySelector('.nav-item[data-page="reports"]'),t2=document.querySelector('.nav-item[data-page="technician"]');
+ if(t1)t1.title=openReports?openReports+' report(s) still open':'No open reports';
+ if(t2)t2.title=todo?todo+' job(s) waiting on the maintenance crew':'Nothing waiting on the crew';
+ var rc=document.getElementById('reportCount');
+ if(rc){var closed=reportData.length-openReports;rc.textContent=openReports+(openReports===1?' open report':' open reports')+(closed?' · '+closed+' closed':'')}
+}
+setInterval(ffStats,1000);ffStats();
+
+
+/* ===== quiet notification feed (no pop-ups) ===== */
+function ffAgo(t){if(typeof t!=='number')return t;var s=Math.floor((Date.now()-t)/1000);
+ if(s<60)return 'Just now';var m=Math.floor(s/60);if(m<60)return m+(m===1?' minute ago':' minutes ago');
+ var hh=Math.floor(m/60);if(hh<24)return hh+(hh===1?' hour ago':' hours ago');
+ var d=Math.floor(hh/24);return d+(d===1?' day ago':' days ago')}
+/* pop-up toasts removed by request — updates are recorded quietly in the Notifications list */
+function ffToast(){}
+function ffNotify(icon,title,body,tone,proofId){
+ if(Date.now()-FF_BOOT<4000)return; /* startup mute: nothing is announced before the user acts */
+ notifications.unshift([icon,title,body,Date.now(),true,proofId||'']);
+ if(notifications.length>30)notifications.pop();
+ if(typeof renderNotifications==='function')renderNotifications();
+ ffStats();
+}
+function ffUnread(){return notifications.filter(function(n){return n[4]}).length}
+function ffMarkRead(){notifications.forEach(function(n){n[4]=false});renderNotifications();ffStats()}
+setInterval(function(){if(document.getElementById('notifications')?.classList.contains('active-page'))return;if(typeof renderNotifications==='function')renderNotifications()},30000);
+
+
+/* ===== always-live day + date (locked to campus time, Malaysia) ===== */
+var FF_TZ='Asia/Kuala_Lumpur';
+function ffFmt(o){o.timeZone=FF_TZ;return new Intl.DateTimeFormat('en-GB',o).format(new Date())}
+function ffDayKey(){var p=new Intl.DateTimeFormat('en-CA',{timeZone:FF_TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());return p}
+function ffHour(){return +new Intl.DateTimeFormat('en-GB',{timeZone:FF_TZ,hour:'2-digit',hour12:false}).format(new Date())}
+function ffDateTick(){
+ var day=ffFmt({weekday:'long'});
+ var full=ffFmt({day:'numeric',month:'long',year:'numeric'});
+ var time=ffFmt({hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});
+ var eb=document.getElementById('todayEyebrow');
+ if(eb)eb.textContent=(day+', '+full+' · '+time).toUpperCase();
+ var td=document.getElementById('todayDate');
+ if(td)td.innerHTML='<i>'+day+', '+ffFmt({day:'numeric',month:'short'})+'</i>';
+ var ml=document.getElementById('monthLabel');
+ if(ml)ml.textContent=ffFmt({month:'long',year:'numeric'});
+ var gt=document.getElementById('greetText');
+ if(gt){var hr=ffHour();gt.textContent=hr<12?'Good morning':(hr<18?'Good afternoon':'Good evening')}
+}
+ffDateTick();setInterval(ffDateTick,1000);
+
+
+/* ===== facility health: starts at 100%, drops with active reports ===== */
+var FF_BLOCKS=[['A','Female'],['B','Female'],['C','Female'],['D','Male'],['E','Male'],['F','Male']];
+var FF_HIT={'Urgent':20,'High':14,'Normal':8};
+function ffHealth(){
+ var st=ffJobState(),acc=ffAccepted(),now=Date.now(),out={};
+ FF_BLOCKS.forEach(function(b){out[b[0]]={pct:100,open:0,levels:{}}});
+ ffAllJobs().forEach(function(j){
+  var m=/Block\s+([A-F])/i.exec(j.loc||'');if(!m)return;var k=m[1].toUpperCase();if(!out[k])return;
+  var total=(FF_SLA[j.pri]||8)*3600000,s=st[j.id];
+  var done=s&&(s+total<=now); if(done)return;                 // resolved -> no penalty
+  var inprog=!!s;
+  var hit=(FF_HIT[j.pri]||8)*(inprog?0.6:1);                   // being repaired hurts less
+  out[k].pct-=hit; out[k].open++;
+  var lv=/Level\s*(\d)/i.exec(j.loc||'');if(lv)out[k].levels[lv[1]]=(out[k].levels[lv[1]]||0)+1;
+ });
+ Object.keys(out).forEach(function(k){out[k].pct=Math.max(0,Math.round(out[k].pct))});
+ return out;
+}
+function ffTone(p){return p>=90?'green':(p>=65?'amber':'red')}
+function ffRenderHealth(){
+ var hs=ffHealth(),counts={green:0,amber:0,red:0};
+ var wrap=document.getElementById('facilityStatus');
+ var rows=FF_BLOCKS.map(function(b){
+  var d=hs[b[0]],t=ffTone(d.pct);counts[t]++;
+  var lv=Object.keys(d.levels).sort();
+  var sub=d.open?(d.open+(d.open===1?' open report':' open reports')+(lv.length?' · Level '+lv.join(', '):'')):'All systems operational';
+  return '<div class="side-facility"><i class="'+t+'-dot"></i><div><strong>Block '+b[0]+' · '+b[1]+'</strong><small>'+sub+'</small>'
+   +'<div class="health-bar"><i class="'+t+'" style="width:'+d.pct+'%"></i></div></div><b>'+d.pct+'%</b></div>';
+ }).join('');
+ if(wrap)wrap.innerHTML=rows;
+ FF_BLOCKS.forEach(function(b){
+  var d=hs[b[0]],t=ffTone(d.pct);
+  var bb=document.getElementById('bb'+b[0]);
+  if(bb){bb.className='big-building bb-'+b[0].toLowerCase()+' '+t;
+   bb.querySelector('small').textContent=d.open?(d.open+' active issue'+(d.open===1?'':'s')+' · '+d.pct+'%'):'Operational · 100%'}
+  var nd=document.getElementById('nd'+b[0]);
+  if(nd){var dot=nd.querySelector('.node-dot');if(dot)dot.className='node-dot '+t+'-dot';
+   var sm=nd.querySelector('small');if(sm)sm.textContent=d.open?(d.open+' active · '+d.pct+'%'):'All clear · 100%'}
+ });
+ var lg=document.querySelector('.health-legend');
+ if(lg)lg.innerHTML='<span><i class="green-dot"></i>Operational <b>'+counts.green+'</b></span><span><i class="amber-dot"></i>Attention <b>'+counts.amber+'</b></span><span><i class="red-dot"></i>Critical <b>'+counts.red+'</b></span>';
+}
+ffRenderHealth();setInterval(function(){ffRenderHealth();if(document.getElementById('reports')?.classList.contains('active-page'))renderReports(document.getElementById('searchInput')?.value||'')},2000);
+
+
+var FF_ICON={'Clogged toilet':'<svg class="ic" aria-hidden="true"><use href="#i-toilet"/></svg>','Clogged sink':'<svg class="ic" aria-hidden="true"><use href="#i-tap"/></svg>','Clogged drainage':'<svg class="ic" aria-hidden="true"><use href="#i-drain"/></svg>','Damaged equipments':'<svg class="ic" aria-hidden="true"><use href="#i-gear"/></svg>','Overflowing water':'<svg class="ic" aria-hidden="true"><use href="#i-droplet"/></svg>','Damaged electrical':'<svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg>','Cleaning':'<svg class="ic" aria-hidden="true"><use href="#i-broom"/></svg>'};
+
+/* ===== analytics: monthly cap of 30 + live category bars ===== */
+var FF_CATS=['Clogged toilet','Clogged sink','Clogged drainage','Damaged equipments','Overflowing water','Damaged electrical','Cleaning'];
+var FF_CAP=30;
+function ffAnalytics(){
+ /* analytics counts EVERY report ever filed, including ones the user has already approved */
+ var jobs=ffAllJobsRaw(),st=ffJobState(),ver=ffVerified(),now=Date.now();
+ var total=jobs.length,counts={},locs={},done=0;
+ jobs.forEach(function(j){
+  counts[j.title]=(counts[j.title]||0)+1;
+  locs[j.loc]=(locs[j.loc]||0)+1;
+  var s=st[j.id],tt=(FF_REAL_SLA&&FF_SLA[j.pri]!==undefined?FF_SLA[j.pri]:8)*3600000;
+  if(ver[j.id]||(s&&s+tt<=now))done++;
+ });
+ function set(id,v){var e=document.getElementById(id);if(e)e.textContent=v}
+ set('monTotal',total);
+ set('monSub',total?total+(total===1?' report this month':' reports this month'):'No reports submitted yet');
+ set('monDone',done);
+ set('monDoneSub',done?done+' of '+total+' reports fixed':'No repairs completed yet');
+ var dpct=total?Math.round(done/total*100):0;
+ var dn=document.getElementById('monDonut');
+ if(dn){dn.querySelector('span').textContent=dpct+'%';
+  dn.style.background='conic-gradient(#1eb980 '+dpct*3.6+'deg,#eef1f7 0deg)'}
+ var max=Math.max(1,Math.max.apply(null,FF_CATS.map(function(c){return counts[c]||0})));
+ var cb=document.getElementById('catBars');
+ if(cb)cb.innerHTML=FF_CATS.map(function(c){var n=counts[c]||0;
+  return '<div class="bar-row"><span>'+c+'</span><div><i style="width:'+(n/max*100)+'%"></i></div><b>'+n+'</b></div>'}).join('');
+ var worst=null;Object.keys(locs).forEach(function(k){if(!worst||locs[k]>locs[worst])worst=k});
+ var badge=document.getElementById('recBadge'),icon=document.getElementById('recIcon'),body=document.getElementById('recBody');
+ if(badge&&worst&&locs[worst]>=3){badge.textContent='ACTION NEEDED';badge.className='alert-badge hot';icon.textContent='!';
+  body.innerHTML='<h3>'+worst+'</h3><p>This location has received <strong>'+locs[worst]+' reports</strong> this month. An inspection is recommended.</p>'}
+ else if(badge){badge.textContent='MONITORING';badge.className='alert-badge';icon.innerHTML='<svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>';
+  body.innerHTML='<h3>No recurring problems</h3><p>Locations with three or more reports this month will be flagged here automatically.</p>'}
+}
+ffAnalytics();setInterval(ffAnalytics,1000);
+
+
+/* ===== proof-of-repair photos ===== */
+function ffProofs(){try{return JSON.parse(localStorage.getItem('ffProofs')||'{}')}catch(e){return {}}}
+function ffSaveProofs(o){try{localStorage.setItem('ffProofs',JSON.stringify(o));return true}catch(e){alert('Storage is full — try fewer or smaller photos.');return false}}
+function ffShrink(file,cb){
+ var fr=new FileReader();
+ fr.onload=function(ev){var im=new Image();
+  im.onload=function(){var mx=740,s=Math.min(1,mx/Math.max(im.width,im.height));
+   var c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);
+   c.getContext('2d').drawImage(im,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',0.7))};
+  im.onerror=function(){cb(null)};im.src=ev.target.result};
+ fr.readAsDataURL(file);
+}
+/* the file input lives outside the job list, so re-rendering never cancels an upload */
+document.addEventListener('click',function(e){
+ var add=e.target.closest('.ff-addproof');
+ if(add){window.FF_PROOF_TARGET=add.dataset.id;var pi=document.getElementById('proofInput');pi.value='';pi.click();return}
+ var del=e.target.closest('.ff-delproof');
+ if(del){e.stopPropagation();var a=ffProofs(),id=del.dataset.id;
+  if(a[id]){a[id].splice(+del.dataset.ix,1);if(!a[id].length)delete a[id];ffSaveProofs(a);ffRenderJobs()}return}
+ var cp=e.target.closest('.ff-clearproof');
+ if(cp){if(confirm('Remove every proof photo for '+cp.dataset.id+'?')){var b=ffProofs();delete b[cp.dataset.id];ffSaveProofs(b);ffRenderJobs()}return}
+ var v=e.target.closest('.ff-viewproof');
+ if(v){ffOpenProof(v.dataset.id,+v.dataset.ix);return}
+ var vp=e.target.closest('.ff-proofbtn');
+ if(vp){ffOpenProof(vp.dataset.id,0);return}
+});
+document.getElementById('proofInput')?.addEventListener('change',function(e){
+ var id=window.FF_PROOF_TARGET;if(!id)return;
+ var files=[].slice.call(e.target.files).slice(0,4);if(!files.length)return;
+ var out=[],seen=0;
+ files.forEach(function(f){ffShrink(f,function(d){seen++;if(d)out.push(d);
+  if(seen===files.length&&out.length){
+   var all=ffProofs();all[id]=(all[id]||[]).concat(out).slice(0,6);
+   if(ffSaveProofs(all)){
+    ffRenderJobs();
+    var job=ffAllJobs().filter(function(x){return x.id===id})[0]||{loc:''};
+    ffAudit('Proof uploaded',out.length+' photo(s) attached to '+id,'Maintenance crew');ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-camera"/></svg>','Repair completed · photo attached','The maintenance crew attached '+out.length+' photo'+(out.length===1?'':'s')+' as proof for '+id+' at '+job.loc+'. Please review the photo and confirm the repair.','green',id);
+   }
+  }})});
+ e.target.value='';
+});
+function ffVerified(){try{return JSON.parse(localStorage.getItem('ffVerified')||'{}')}catch(e){return {}}}
+function ffSaveVerified(o){try{localStorage.setItem('ffVerified',JSON.stringify(o))}catch(e){}}
+function ffDropNotifs(id){
+ for(var i=notifications.length-1;i>=0;i--){
+  var n=notifications[i];
+  if(n[5]===id||(n[2]&&n[2].indexOf(id)>-1)||(n[1]&&n[1].indexOf(id)>-1))notifications.splice(i,1);
+ }
+ if(typeof renderNotifications==='function')renderNotifications();
+ if(typeof ffStats==='function')ffStats();
+}
+function ffApprove(id){
+ var v=ffVerified();v[id]={by:(document.querySelector('.user-meta strong')||{}).textContent||'User',at:Date.now()};ffSaveVerified(v);
+ var i=reportData.findIndex(function(x){return x[0]===id});
+ if(i>-1){reportData[i][5]='Closed';reportData[i][6]='green-pill'}
+ ffDropNotifs(id);
+ document.querySelectorAll('.proof-viewer').forEach(function(el){el.remove()});
+ ffRenderJobs();if(typeof renderReports==='function')renderReports(document.getElementById('searchInput')?.value||'');
+ ffAudit('Resident approved repair',id+' confirmed fixed by the resident');ffToast('<svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>','Repair approved','You confirmed '+id+' was fixed. The job has been closed and removed from the maintenance queue.','green');
+}
+function ffReject(id){
+ var st=ffJobState();delete st[id];ffSaveJobs(st);
+ var pr=ffProofs();delete pr[id];ffSaveProofs(pr);
+ if(window.FF_DONEFIRED){delete window.FF_DONEFIRED[id];ffSaveFired(window.FF_DONEFIRED)}
+ var i=reportData.findIndex(function(x){return x[0]===id});
+ if(i>-1){reportData[i][5]='Reopened';reportData[i][6]='red-pill'}
+ ffDropNotifs(id);
+ document.querySelectorAll('.proof-viewer').forEach(function(el){el.remove()});
+ ffRenderJobs();if(typeof renderReports==='function')renderReports(document.getElementById('searchInput')?.value||'');
+ ffAudit('Resident rejected repair',id+' marked still broken');ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-undo"/></svg>','Repair rejected by the user',id+' was marked as still broken. The job is back in the maintenance queue.','amber',id);
+}
+document.addEventListener('click',function(e){
+ var ok=e.target.closest('.ff-approve'); if(ok){ffApprove(ok.dataset.id);return}
+ var no=e.target.closest('.ff-reject'); if(no){if(confirm('Tell the maintenance crew this is still broken?'))ffReject(no.dataset.id);return}
+});
+function ffOpenProof(id,ix){
+ var pics=ffProofs()[id]||[];if(!pics.length){alert('No proof photo has been attached for '+id+' yet.');return}
+ var job=ffAllJobs().filter(function(x){return x.id===id})[0]||{title:'Repair',loc:''};
+ var ov=document.createElement('div');ov.className='proof-viewer';
+ ov.innerHTML='<div class="pv-card"><button class="pv-close">×</button>'
+  +'<div class="pv-head"><span class="pill green-pill">REPAIR COMPLETED</span><strong>'+id+' · '+job.title+'</strong><small>'+job.loc+'</small></div>'
+  +'<div class="pv-imgs">'+pics.map(function(s){return '<img src="'+s+'">'}).join('')+'</div>'
+  +(ffVerified()[id]
+    ? '<p class="pv-foot ok"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> You already confirmed this repair.</p>'
+    : '<p class="pv-foot">Check the photo. Is the problem actually fixed?</p>'
+      +'<div class="pv-acts"><button class="pv-yes ff-approve" data-id="'+id+'"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Yes, repair completed</button>'
+      +'<button class="pv-no ff-reject" data-id="'+id+'"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>No, still broken</button></div>')
+  +'</div>';
+ ov.onclick=function(ev){if(ev.target===ov||ev.target.className==='pv-close')ov.remove()};
+ document.body.appendChild(ov);
+}
+
+
+var FF_SCALE_AT=Date.now();
+/* ===== demo speed: 1 SLA hour = 2 seconds ===== */
+var FF_REAL_SLA={'Urgent':2,'High':4,'Normal':8};
+function ffApplySpeed(on,initial){
+ var f=on?(2/3600):1;
+ FF_SLA={'Urgent':FF_REAL_SLA.Urgent*f,'High':FF_REAL_SLA.High*f,'Normal':FF_REAL_SLA.Normal*f};
+ try{localStorage.setItem('ffSpeed',on?'1':'0')}catch(e){}
+ var n=document.getElementById('speedNote');
+ if(n)n.textContent=on?'Sped up · Urgent 4s · High 8s · Normal 16s':'Real timing · Urgent 2h · High 4h · Normal 8h';
+ var box=document.querySelector('.speed-switch');
+ if(box)box.classList.toggle('on',!!on);
+ if(!initial){FF_SCALE_AT=Date.now();if(typeof ffAgeSync==='function')ffAgeSync()}
+ if(typeof ffRenderJobs==='function')ffRenderJobs();
+}
+(function(){
+ var sw=document.getElementById('demoSpeed');if(!sw)return;
+ var saved=localStorage.getItem('ffSpeed')==='1';
+ sw.checked=saved;ffApplySpeed(saved,true);
+ sw.addEventListener('change',function(){ffApplySpeed(sw.checked)});
+})();
+
+
+document.getElementById('wipeBtn')?.addEventListener('click',function(){
+ if(!confirm('Clear every report, job, photo and notification from this device?'))return;
+ ['ffJobs','ffNewJobs','ffAccepted','ffProofs','ffVerified','ffFired','ffCount','ffSpeed','ffNotifs','ffAudit','ffEsc','ffQuotes','ffAged','ffDataVersion'].forEach(function(k){try{localStorage.removeItem(k)}catch(e){}});try{sessionStorage.clear()}catch(e){}
+ location.reload();
+});
+
+/* ================= ADMINISTRATION (Head of Dormitory) ================= */
+function ffAuditLog(){try{return JSON.parse(localStorage.getItem('ffAudit')||'[]')}catch(e){return []}}
+function ffAudit(action,detail,who){
+ var a=ffAuditLog();a.unshift({t:Date.now(),a:action,d:detail||'',w:who||((document.querySelector('.user-meta strong')||{}).textContent||'System')});
+ if(a.length>120)a.pop();
+ try{localStorage.setItem('ffAudit',JSON.stringify(a))}catch(e){}
+}
+function ffHrs(ms){var m=Math.floor(ms/60000);if(m<60)return m+'m';var hh=Math.floor(m/60),mm=m%60;return hh+'h '+(mm<10?'0':'')+mm+'m'}
+
+/* ===== ageing / time-frame escalation (scales with demo speed) ===== */
+function ffDayMs(){return 24*3600000*((FF_SLA&&FF_SLA.Normal?FF_SLA.Normal:8)/8)}
+function ffAged(){try{return JSON.parse(localStorage.getItem('ffAged')||'{}')}catch(e){return {}}}
+function ffSaveAged(o){try{localStorage.setItem('ffAged',JSON.stringify(o))}catch(e){}}
+var FF_AGE_TIERS=[{d:1,label:'1 DAY UNRESOLVED',tone:'amber',txt:'has been open for a full day'},
+                  {d:2,label:'2 DAYS UNRESOLVED',tone:'amber',txt:'is now 2 days old'},
+                  {d:3,label:'3+ DAYS CRITICAL',tone:'red',txt:'has been unresolved for 3 days and needs immediate action'}];
+function ffAgeTier(age){var day=ffDayMs(),n=Math.floor(age/day),t=null;
+ FF_AGE_TIERS.forEach(function(x){if(n>=x.d)t=x});return {days:n,tier:t,day:day,next:day-(age%day)}}
+/* re-baseline the ageing memory without firing anything (used when the clock scale changes) */
+function ffAgeSync(){
+ var seen=ffAged(),st=ffJobState(),acc=ffAccepted(),ver=ffVerified(),now=Date.now();
+ ffAllJobsRaw().forEach(function(j){
+  if(ver[j.id]){delete seen[j.id];return}
+  var created=j.created||acc[j.id]||st[j.id]||now;
+  var a=ffAgeTier(now-created);
+  if(a.tier)seen[j.id]=a.tier.d; else delete seen[j.id];
+ });
+ ffSaveAged(seen);
+}
+function ffAgeCheck(watchable){
+ if(Date.now()-FF_SCALE_AT<2000)return;
+ var seen=ffAged(),changed=false;
+ watchable.forEach(function(x){
+  var a=ffAgeTier(x.age);if(!a.tier)return;
+  if((seen[x.j.id]||0)>=a.tier.d)return;
+  seen[x.j.id]=a.tier.d;changed=true;
+  if(Date.now()-FF_BOOT<2500)return;
+  ffAudit('Ageing alert · '+a.tier.label,x.j.id+' · '+x.j.loc+' · still '+x.state.toLowerCase(),'System');
+  ffNotify(a.tier.tone==='red'?'<svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg>':'<svg class="ic" aria-hidden="true"><use href="#i-hourglass"/></svg>','Overdue report · '+a.tier.label,
+   x.j.id+' at '+x.j.loc+' '+a.tier.txt+'. The Head of Dormitory should review it.',a.tier.tone);
+ });
+ if(changed)ffSaveAged(seen);
+}
+function ffAdminData(){
+ var jobs=ffAllJobsRaw(),st=ffJobState(),acc=ffAccepted(),pr=ffProofs(),ver=ffVerified(),now=Date.now();
+ var d={total:jobs.length,open:0,breach:0,approved:0,withProof:0,doneCount:0,sumMs:0,watch:[],rows:[]};
+ jobs.forEach(function(j){
+  var pri=j.pri, total=(FF_SLA[pri]||8)*3600000, s=st[j.id];
+  var done=s&&(s+total<=now), approved=!!ver[j.id];
+  var created=j.created||acc[j.id]||s||now;
+  var state=approved?'Closed':(done?'Awaiting user approval':(s?'Repair in progress':(acc[j.id]?'Accepted':'Awaiting acceptance')));
+  if(!approved)d.open++;
+  if(approved)d.approved++;
+  if(done||approved){d.doneCount++;if(s)d.sumMs+=total}
+  if(done&&pr[j.id])d.withProof++;
+  /* breach: not accepted within its window, or finished repair with no proof for a long time */
+  var age=now-created, late=(!s&&age>total)||(done&&!pr[j.id]&&(now-(s+total))>total);
+  if(late&&!approved)d.breach++;
+  if(!approved)d.watch.push({j:j,state:state,age:age});   /* feeds the ageing alerts only */
+  d.rows.push({j:j,pri:pri,state:state,approved:approved,done:done,proof:!!pr[j.id]});
+ });
+ d.watch.sort(function(a,b){return b.age-a.age});
+ ffAgeCheck(d.watch);
+ return d;
+}
+function ffRenderAdmin(){
+ if(!document.getElementById('admin'))return;
+ var d=ffAdminData(),set=function(id,v){var e=document.getElementById(id);if(e)e.textContent=v};
+ set('aTotal',d.total);set('aOpen',d.open);set('aBreach',d.breach);set('aApproved',d.approved);
+ set('aOpenSub',d.open?'Not yet closed':'Everything closed');
+ set('aBreachSub',d.breach?'Needs your attention':'Within target');
+ set('aAvg',d.doneCount?ffHrs(d.sumMs/d.doneCount):'—');
+ var pc=d.doneCount?Math.round(d.withProof/d.doneCount*100):100;
+ set('aProof',pc+'%');set('aProofSub',d.withProof+' of '+d.doneCount+' repairs documented');
+ set('aApprovedSub',d.approved?'Verified by residents':'None verified yet');
+
+ var hs=ffHealth(),rank=FF_BLOCKS.map(function(b){return {k:b[0],g:b[1],h:hs[b[0]]}}).sort(function(a,b){return a.h.pct-b.h.pct});
+ var br=document.getElementById('blockRank');
+ if(br)br.innerHTML=rank.map(function(r){var t=ffTone(r.h.pct);
+  return '<div class="rank-row"><b>Block '+r.k+'</b><span>'+r.g+'</span><div class="health-bar"><i class="'+t+'" style="width:'+r.h.pct+'%"></i></div>'
+   +'<em>'+r.h.pct+'%</em><small>'+(r.h.open?r.h.open+' open':'clear')+'</small></div>'}).join('');
+
+ var ac=document.getElementById('adminControl');
+ if(ac)ac.innerHTML=d.rows.length?d.rows.map(function(r){
+  return '<div class="ctrl-row"><div><strong>'+r.j.id+'</strong><small>'+r.j.loc+'</small><span class="ctrl-state">'+r.state+'</span></div>'
+   +'<div class="ctrl-acts">'+(r.approved
+     ? '<button class="mini-btn ff-adminreopen" data-id="'+r.j.id+'"><svg class="ic" aria-hidden="true"><use href="#i-undo"/></svg>Reopen</button>'
+     : '<button class="mini-btn ff-adminclose" data-id="'+r.j.id+'"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Force close</button>')
+   +'</div></div>'}).join(''):'<p class="empty-row">No reports to supervise yet.</p>';
+
+ var al=document.getElementById('auditLog'),L=ffAuditLog();
+ if(al)al.innerHTML=L.length?L.slice(0,40).map(function(e){
+  return '<div class="audit-row"><time>'+new Date(e.t).toLocaleString('en-GB',{timeZone:FF_TZ,day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})+'</time>'
+   +'<div><strong>'+e.a+'</strong><p>'+e.d+'</p></div><span class="audit-who">'+e.w+'</span></div>'
+ }).join(''):'<p class="empty-row">No activity recorded yet.</p>';
+
+ var nb=document.getElementById('navAdmin');
+ if(nb){var n=d.breach+(window.FF_PENDQ||0);
+  var ai=document.querySelector('.nav-item[data-page="admin"]');
+  if(ai)ai.title=n?((window.FF_PENDQ||0)+' costing approval(s) · '+d.breach+' overdue report(s)'):'Nothing needs the Head of Dormitory';
+  var cur=nb.textContent,vis=n?'':'none';
+  if(cur!==String(n))nb.textContent=n;
+  if(nb.style.display!==vis)nb.style.display=vis}
+}
+document.addEventListener('click',function(e){
+ var fc=e.target.closest('.ff-adminclose');
+ if(fc){if(!confirm('Force close '+fc.dataset.id+' without resident approval?'))return;
+  var v=ffVerified();v[fc.dataset.id]={by:'Head of Dormitory',at:Date.now(),forced:true};ffSaveVerified(v);
+  var i=reportData.findIndex(function(x){return x[0]===fc.dataset.id});
+  if(i>-1){reportData[i][5]='Closed';reportData[i][6]='green-pill'}
+  ffDropNotifs(fc.dataset.id);
+  ffAudit('Report force-closed',fc.dataset.id+' closed by administration override','Head of Dormitory');
+  ffRenderAdmin();ffRenderJobs();renderReports(document.getElementById('searchInput')?.value||'');return}
+ var ro=e.target.closest('.ff-adminreopen');
+ if(ro){if(!confirm('Reopen '+ro.dataset.id+' and send it back to the crew?'))return;
+  var v2=ffVerified();delete v2[ro.dataset.id];ffSaveVerified(v2);
+  var st=ffJobState();delete st[ro.dataset.id];ffSaveJobs(st);
+  var pr=ffProofs();delete pr[ro.dataset.id];ffSaveProofs(pr);
+  if(window.FF_DONEFIRED){delete window.FF_DONEFIRED[ro.dataset.id];ffSaveFired(window.FF_DONEFIRED)}
+  var k=reportData.findIndex(function(x){return x[0]===ro.dataset.id});
+  if(k>-1){reportData[k][5]='Reopened';reportData[k][6]='red-pill'}
+  ffAudit('Report reopened',ro.dataset.id+' reopened by administration','Head of Dormitory');
+  ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-undo"/></svg>','Reopened by administration',ro.dataset.id+' was reopened by the Head of Dormitory.','amber');
+  ffRenderAdmin();ffRenderJobs();renderReports(document.getElementById('searchInput')?.value||'');return}
+ if(e.target.closest('#exportCsv')){
+  var rows=[['Report','Location','Issue','Priority','Status','Proof','Closed by']];
+  var st2=ffJobState(),pr2=ffProofs(),ver2=ffVerified(),now2=Date.now();
+  ffAllJobsRaw().forEach(function(j){
+   var pri=j.pri,tt=(FF_SLA[pri]||8)*3600000,s=st2[j.id];
+   var status=ver2[j.id]?'Closed':(s&&s+tt<=now2?'Awaiting approval':(s?'In progress':'Open'));
+   rows.push([j.id,j.loc,j.title,pri,status,pr2[j.id]?'Yes':'No',ver2[j.id]?ver2[j.id].by:'']);
+  });
+  var csv=rows.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"'}).join(',')}).join('\n');
+  var a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
+  a.download='fixflow-report-'+ffDayKey()+'.csv';a.click();
+  ffAudit('Data exported','CSV of all reports downloaded','Head of Dormitory');
+ }
+});
+setInterval(ffRenderAdmin,1500);ffRenderAdmin();
+
+
+/* ================= MATERIALS & COSTING APPROVAL ================= */
+function ffQuotes(){try{return JSON.parse(localStorage.getItem('ffQuotes')||'{}')}catch(e){return {}}}
+function ffSaveQuotes(o){try{localStorage.setItem('ffQuotes',JSON.stringify(o))}catch(e){}}
+function ffMoney(n){return 'RM '+(Math.round(n*100)/100).toFixed(2)}
+function ffQuoteTotal(items){var t=0;items.forEach(function(i){t+=(+i.q||0)*(+i.c||0)});return t}
+
+var FF_QJOB=null,FF_QREV=false,FF_QMODE='new';
+function ffQRows(items){
+ var w=document.getElementById('quoteRows');if(!w)return;
+ w.innerHTML=(items.length?items:[{n:'',q:1,c:''}]).map(function(it,i){
+  return '<div class="quote-row"><input class="q-n" data-i="'+i+'" type="text" placeholder="e.g. PVC pipe 2 inch" value="'+(it.n||'').replace(/"/g,'&quot;')+'">'
+   +'<input class="q-q" data-i="'+i+'" type="number" min="1" step="1" value="'+(it.q||1)+'">'
+   +'<input class="q-c" data-i="'+i+'" type="number" min="0" step="0.01" placeholder="0.00" value="'+(it.c===undefined?'':it.c)+'">'
+   +'<button type="button" class="q-del" data-i="'+i+'" title="Remove">×</button></div>'}).join('');
+ ffQSum();
+}
+function ffQRead(){
+ var out=[];document.querySelectorAll('#quoteRows .quote-row').forEach(function(r){
+  var n=r.querySelector('.q-n').value.trim(),q=r.querySelector('.q-q').value,c=r.querySelector('.q-c').value;
+  if(n)out.push({n:n,q:+q||1,c:+c||0})});
+ return out;
+}
+function ffQSum(){var t=ffQuoteTotal(ffQRead());var e=document.getElementById('quoteTotal');if(e)e.textContent=ffMoney(t)}
+function ffOpenQuote(id,revision,mode){
+ FF_QJOB=id;FF_QREV=!!revision;FF_QMODE=mode||(revision?'revision':'new');
+ var q=ffQuotes()[id];
+ var T={new:['Submit for approval','List what the repair needs. The Head of Dormitory must approve before work can start.','Send to Head of Dormitory'],
+        revision:['Request a cost revision','Costs have changed. The Head of Dormitory must review the revised amount.','Send revision to Head'],
+        extra:['Additional materials & costing','Extra materials or services used after the repair was completed. The Head of Dormitory must approve this additional spend.','Send additional cost to Head']}[FF_QMODE];
+ document.getElementById('quoteTitle').textContent=T[0];
+ document.getElementById('quoteSub').textContent=T[1];
+ document.getElementById('quoteSubmit').textContent=T[2];
+ document.getElementById('quoteNote').value=(FF_QMODE==='new'&&q&&q.note)||'';
+ ffQRows(FF_QMODE==='extra'?[]:((q&&q.items)||[]));
+ document.getElementById('quoteModal').classList.add('open');
+}
+document.addEventListener('input',function(e){if(e.target.closest('#quoteRows'))ffQSum()});
+document.addEventListener('click',function(e){
+ if(e.target.closest('#addRow')){var it=ffQRead();it.push({n:'',q:1,c:''});ffQRows(it);return}
+ var del=e.target.closest('.q-del');
+ if(del){var it2=ffQRead();it2.splice(+del.dataset.i,1);ffQRows(it2);return}
+ if(e.target.closest('#quoteClose')){document.getElementById('quoteModal').classList.remove('open');return}
+ if(e.target.closest('#quoteSubmit')){
+  var items=ffQRead();
+  if(!items.length){alert('Add at least one material or service before sending it for approval.');return}
+  var all=ffQuotes(),id=FF_QJOB,prev=all[id],total=ffQuoteTotal(items);
+  if(FF_QMODE==='extra'){
+   if(!all[id])all[id]={items:[],total:0,status:'approved',submitted:Date.now(),history:[]};
+   if(!all[id].extras)all[id].extras=[];
+   all[id].extras.push({items:items,total:total,note:document.getElementById('quoteNote').value.trim(),
+                        status:'pending',submitted:Date.now()});
+   ffSaveQuotes(all);
+   document.getElementById('quoteModal').classList.remove('open');
+   ffAudit('Additional costing submitted',id+' · '+items.length+' extra item(s) · '+ffMoney(total)+' after completion','Maintenance crew');
+   ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>','Additional cost sent for approval',id+' · extra '+ffMoney(total)+' incurred after the repair. Waiting for the Head of Dormitory.','amber');
+   ffRenderJobs();ffRenderAdmin();return}
+  var hist=(prev&&prev.history)||[];
+  if(prev&&prev.status==='approved')hist.push({t:Date.now(),total:prev.total,items:prev.items.length});
+  all[id]={items:items,total:total,note:document.getElementById('quoteNote').value.trim(),
+           status:'pending',revision:!!FF_QREV||(prev&&prev.status==='approved'),submitted:Date.now(),history:hist};
+  ffSaveQuotes(all);
+  document.getElementById('quoteModal').classList.remove('open');
+  ffAudit(FF_QREV?'Cost revision submitted':'Materials & costing submitted',id+' · '+items.length+' item(s) · '+ffMoney(total),'Maintenance crew');
+  ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg>',FF_QREV?'Cost revision sent for approval':'Costing sent for approval',
+   id+' · '+items.length+' item(s) totalling '+ffMoney(total)+' is waiting for the Head of Dormitory.','amber');
+  ffRenderJobs();ffRenderAdmin();return}
+ var sq=e.target.closest('.ff-quote');   if(sq){ffOpenQuote(sq.dataset.id,false);return}
+ var xq=e.target.closest('.ff-extra');   if(xq){ffOpenQuote(xq.dataset.id,false,'extra');return}
+ var xa=e.target.closest('.ff-xapprove');
+ if(xa){var xo=ffQuotes(),xi=xa.dataset.id,xx=+xa.dataset.ex;
+  if(!xo[xi]||!xo[xi].extras||!xo[xi].extras[xx])return;
+  xo[xi].extras[xx].status='approved';xo[xi].extras[xx].decided=Date.now();xo[xi].extras[xx].decidedBy='Head of Dormitory';ffSaveQuotes(xo);
+  ffAudit('Additional costing approved',xi+' · extra '+ffMoney(xo[xi].extras[xx].total)+' authorised','Head of Dormitory');
+  ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>','Additional cost approved',xi+' · extra '+ffMoney(xo[xi].extras[xx].total)+' approved by the Head of Dormitory.','green');
+  ffRenderJobs();ffRenderAdmin();return}
+ var xr=e.target.closest('.ff-xreject');
+ if(xr){var xw=prompt('Reason for rejecting this additional cost:','Not justified — please explain why it was needed');
+  if(xw===null)return;
+  var xo2=ffQuotes(),xi2=xr.dataset.id,xx2=+xr.dataset.ex;
+  if(!xo2[xi2]||!xo2[xi2].extras||!xo2[xi2].extras[xx2])return;
+  xo2[xi2].extras[xx2].status='rejected';xo2[xi2].extras[xx2].decided=Date.now();xo2[xi2].extras[xx2].reason=xw;ffSaveQuotes(xo2);
+  ffAudit('Additional costing rejected',xi2+' · '+xw,'Head of Dormitory');
+  ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-ban"/></svg>','Additional cost rejected',xi2+' additional cost was rejected: '+xw,'amber');
+  ffRenderJobs();ffRenderAdmin();return}
+ var rq=e.target.closest('.ff-revise');  if(rq){ffOpenQuote(rq.dataset.id,true);return}
+ var ap=e.target.closest('.ff-qapprove');
+ if(ap){var a=ffQuotes(),id2=ap.dataset.id;if(!a[id2])return;
+  a[id2].status='approved';a[id2].decided=Date.now();a[id2].decidedBy='Head of Dormitory';ffSaveQuotes(a);
+  ffAudit('Costing approved',id2+' · '+ffMoney(a[id2].total)+' authorised','Head of Dormitory');
+  ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>','Costing approved',id2+' · '+ffMoney(a[id2].total)+' approved by the Head of Dormitory. Repair may begin.','green');
+  ffRenderJobs();ffRenderAdmin();return}
+ var rj=e.target.closest('.ff-qreject');
+ if(rj){var why=prompt('Reason for rejecting this costing:','Cost too high — please source a cheaper option');
+  if(why===null)return;
+  var b=ffQuotes(),id3=rj.dataset.id;if(!b[id3])return;
+  b[id3].status='rejected';b[id3].decided=Date.now();b[id3].reason=why;ffSaveQuotes(b);
+  ffAudit('Costing rejected',id3+' · '+why,'Head of Dormitory');
+  ffNotify('<svg class="ic" aria-hidden="true"><use href="#i-ban"/></svg>','Costing rejected',id3+' was rejected by the Head of Dormitory: '+why,'amber');
+  ffRenderJobs();ffRenderAdmin();return}
+});
+function ffQuoteCard(q,id,forAdmin){
+ var rows=q.items.map(function(i){return '<div class="qi"><span>'+i.n+'</span><b>'+i.q+' ×</b><em>'+ffMoney(i.c)+'</em><strong>'+ffMoney(i.q*i.c)+'</strong></div>'}).join('');
+ return '<div class="quote-box '+q.status+'">'
+  +'<div class="qb-head"><span class="pill '+(q.status==='approved'?'green-pill':q.status==='pending'?'amber-pill':'red-pill')+'">'
+  +(q.status==='approved'?'COSTING APPROVED':q.status==='pending'?(q.revision?'REVISION AWAITING HEAD':'AWAITING HEAD APPROVAL'):'COSTING REJECTED')+'</span>'
+  +'<strong>'+ffMoney(q.total)+'</strong></div>'
+  +'<div class="qi-list">'+rows+'</div>'
+  +(q.note?'<p class="qb-note">“'+q.note+'”</p>':'')
+  +(q.reason?'<p class="qb-note bad">Head of Dormitory: '+q.reason+'</p>':'')
+  +(q.history&&q.history.length?'<p class="qb-note">Previously approved at '+ffMoney(q.history[q.history.length-1].total)+' · revised</p>':'')
+  +(forAdmin?'<div class="proof-acts"><button class="mini-btn ff-qapprove" data-id="'+id+'"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Approve spend</button><button class="mini-btn danger ff-qreject" data-id="'+id+'"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Reject</button></div>':'')
+  +'</div>';
+}
+function ffExtrasHtml(q,id,forAdmin){
+ if(!q||!q.extras||!q.extras.length)return '';
+ return q.extras.map(function(x,ix){
+  var rows=x.items.map(function(i){return '<div class="qi"><span>'+i.n+'</span><b>'+i.q+' ×</b><em>'+ffMoney(i.c)+'</em><strong>'+ffMoney(i.q*i.c)+'</strong></div>'}).join('');
+  return '<div class="quote-box '+x.status+'"><div class="qb-head"><span class="pill '+(x.status==='approved'?'green-pill':x.status==='pending'?'amber-pill':'red-pill')+'">'
+   +(x.status==='approved'?'ADDITIONAL COST APPROVED':x.status==='pending'?'ADDITIONAL COST AWAITING HEAD':'ADDITIONAL COST REJECTED')+'</span>'
+   +'<strong>+'+ffMoney(x.total)+'</strong></div>'
+   +'<div class="qi-list">'+rows+'</div>'
+   +(x.note?'<p class="qb-note">“'+x.note+'”</p>':'')
+   +(x.reason?'<p class="qb-note bad">Head of Dormitory: '+x.reason+'</p>':'')
+   +(forAdmin&&x.status==='pending'?'<div class="proof-acts"><button class="mini-btn ff-xapprove" data-id="'+id+'" data-ex="'+ix+'"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Approve extra spend</button><button class="mini-btn danger ff-xreject" data-id="'+id+'" data-ex="'+ix+'"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Reject</button></div>':'')
+   +'</div>'}).join('');
+}
+function ffJobSpend(q){var t=(q.status==='approved'?q.total:0);
+ (q.extras||[]).forEach(function(x){if(x.status==='approved')t+=x.total});return t}
+function ffRenderQuoteApprovals(){
+ var qs=ffQuotes(),jobs=ffAllJobsRaw(),pend=[],spend=0;
+ jobs.forEach(function(j){var q=qs[j.id];if(!q)return;
+  if(q.status==='pending')pend.push({j:j,q:q,kind:'main'});
+  (q.extras||[]).forEach(function(x){if(x.status==='pending')pend.push({j:j,q:q,kind:'extra'})});
+  spend+=ffJobSpend(q)});
+ var wrap=document.getElementById('quoteList');
+ if(wrap)wrap.innerHTML=pend.length?pend.map(function(x){
+  if(x.kind==='extra')return '';
+  return '<div class="qa-row"><div class="qa-main"><div class="watch-head"><span class="report-id">'+x.j.id+'</span>'
+   +'<span class="pill amber-pill">'+(x.q.revision?'REVISED COSTING':'NEW COSTING')+'</span></div>'
+   +'<strong>'+x.j.title+'</strong><p>'+x.j.loc+'</p>'+ffQuoteCard(x.q,x.j.id,true)+'</div></div>'
+ }).join('')+(function(){
+  var seen={},out='';
+  pend.forEach(function(x){if(x.kind!=='extra'||seen[x.j.id])return;seen[x.j.id]=1;
+   out+='<div class="qa-row"><div class="qa-main"><div class="watch-head"><span class="report-id">'+x.j.id+'</span>'
+    +'<span class="pill amber-pill">ADDITIONAL COST · AFTER COMPLETION</span></div>'
+    +'<strong>'+x.j.title+'</strong><p>'+x.j.loc+'</p>'+ffExtrasHtml(x.q,x.j.id,true)+'</div></div>'});
+  return out})()
+ :'<p class="empty-row">No costing waiting for approval.</p>';
+ var qb=document.getElementById('quoteBadge');
+ if(qb){qb.textContent=pend.length?pend.length+' AWAITING APPROVAL':'NONE PENDING';qb.className='alert-badge'+(pend.length?' hot':'')}
+ var sp=document.getElementById('aSpend'),pn=document.getElementById('aPending');
+ if(sp)sp.textContent=ffMoney(spend).replace('.00','');
+ if(pn)pn.textContent=pend.length;
+ var ps=document.getElementById('aPendingSub');if(ps)ps.textContent=pend.length?'Awaiting your decision':'Nothing to approve';
+ window.FF_PENDQ=pend.length;
+}
+setInterval(ffRenderQuoteApprovals,1200);ffRenderQuoteApprovals();
+
+
+</script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a43a24e1b9dcb2e8',t:'MTc5MDg0MzgzMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
